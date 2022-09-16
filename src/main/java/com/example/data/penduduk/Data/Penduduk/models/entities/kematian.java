@@ -1,6 +1,7 @@
 package com.example.data.penduduk.Data.Penduduk.models.entities;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.sql.Time;
 
 import javax.persistence.Column;
@@ -9,12 +10,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.xml.crypto.Data;
 
 @Entity
 @Table(name = "tbl_kematian")
 public class Kematian implements Serializable{
-    
+
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -27,7 +27,7 @@ public class Kematian implements Serializable{
     @Column(length=100)
     private String tempat_kematian;
 
-    private Data tgl_kematian;
+    private Date tgl_kematian;
 
     private Time waktu_kematian;
 
@@ -39,7 +39,7 @@ public class Kematian implements Serializable{
 
     }
 
-    public Kematian(Long id, String penyebab_kematian, String tempat_kematian, Data tgl_kematian, Time waktu_kematian,
+    public Kematian(Long id, String penyebab_kematian, String tempat_kematian, Date tgl_kematian, Time waktu_kematian,
             Long id_NIKpendataan_penduduk, Long pendataan_pendudukNIK) {
         this.id = id;
         this.penyebab_kematian = penyebab_kematian;
@@ -48,10 +48,6 @@ public class Kematian implements Serializable{
         this.waktu_kematian = waktu_kematian;
         this.id_NIKpendataan_penduduk = id_NIKpendataan_penduduk;
         this.pendataan_pendudukNIK = pendataan_pendudukNIK;
-    }
-
-    public static long getSerialversionuid() {
-        return serialVersionUID;
     }
 
     public Long getId() {
@@ -78,11 +74,11 @@ public class Kematian implements Serializable{
         this.tempat_kematian = tempat_kematian;
     }
 
-    public Data getTgl_kematian() {
+    public Date getTgl_kematian() {
         return tgl_kematian;
     }
 
-    public void setTgl_kematian(Data tgl_kematian) {
+    public void setTgl_kematian(Date tgl_kematian) {
         this.tgl_kematian = tgl_kematian;
     }
 
