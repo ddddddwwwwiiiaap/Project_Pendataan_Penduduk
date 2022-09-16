@@ -22,19 +22,20 @@ public class Perpindahan implements Serializable{
     @Column(length=100)
     private String nama_kepalakeluarga;
 
-    @Column(length=100)
+    @Column(length=150)
     private String alamat_sekarang;
 
-    
-    private Long jumlah_keluargapindah;
+    @Column(length=50)
+    private String jumlah_keluargapindah;
 
-    private Long pendataan_pendudukNIK;
+    @Column(length=50)
+    private String pendataan_pendudukNIK;
 
     public Perpindahan(){
     }
 
-    public Perpindahan(Long id, String nama_kepalakeluarga, String alamat_sekarang, Long jumlah_keluargapindah,
-            Long pendataan_pendudukNIK) {
+    public Perpindahan(Long id, String nama_kepalakeluarga, String alamat_sekarang, String jumlah_keluargapindah,
+            String pendataan_pendudukNIK) {
         this.id = id;
         this.nama_kepalakeluarga = nama_kepalakeluarga;
         this.alamat_sekarang = alamat_sekarang;
@@ -66,19 +67,19 @@ public class Perpindahan implements Serializable{
         this.alamat_sekarang = alamat_sekarang;
     }
 
-    public Long getJumlah_keluargapindah() {
+    public String getJumlah_keluargapindah() {
         return jumlah_keluargapindah;
     }
 
-    public void setJumlah_keluargapindah(Long jumlah_keluargapindah) {
+    public void setJumlah_keluargapindah(String jumlah_keluargapindah) {
         this.jumlah_keluargapindah = jumlah_keluargapindah;
     }
 
-    public Long getPendataan_pendudukNIK() {
+    public String getPendataan_pendudukNIK() {
         return pendataan_pendudukNIK;
     }
 
-    public void setPendataan_pendudukNIK(Long pendataan_pendudukNIK) {
+    public void setPendataan_pendudukNIK(String pendataan_pendudukNIK) {
         this.pendataan_pendudukNIK = pendataan_pendudukNIK;
     }
 

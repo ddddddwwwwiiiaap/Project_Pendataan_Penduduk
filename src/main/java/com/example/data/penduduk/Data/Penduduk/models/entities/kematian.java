@@ -33,14 +33,15 @@ public class Kematian implements Serializable{
 
     private Long id_NIKpendataan_penduduk;
 
-    private Long pendataan_pendudukNIK;
+    @Column(length=50,  unique = true)
+    private String pendataan_pendudukNIK;
 
     public Kematian(){
 
     }
 
     public Kematian(Long id, String penyebab_kematian, String tempat_kematian, Date tgl_kematian, Time waktu_kematian,
-            Long id_NIKpendataan_penduduk, Long pendataan_pendudukNIK) {
+            Long id_NIKpendataan_penduduk, String pendataan_pendudukNIK) {
         this.id = id;
         this.penyebab_kematian = penyebab_kematian;
         this.tempat_kematian = tempat_kematian;
@@ -98,11 +99,11 @@ public class Kematian implements Serializable{
         this.id_NIKpendataan_penduduk = id_NIKpendataan_penduduk;
     }
 
-    public Long getPendataan_pendudukNIK() {
+    public String getPendataan_pendudukNIK() {
         return pendataan_pendudukNIK;
     }
 
-    public void setPendataan_pendudukNIK(Long pendataan_pendudukNIK) {
+    public void setPendataan_pendudukNIK(String pendataan_pendudukNIK) {
         this.pendataan_pendudukNIK = pendataan_pendudukNIK;
     }
 
