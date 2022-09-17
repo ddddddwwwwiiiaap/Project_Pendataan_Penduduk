@@ -69,6 +69,9 @@ public class PendataanPenduduk implements Serializable{
     @OneToOne(mappedBy = "pendataanPenduduk")
     private KematianPenduduk kematianPenduduk;
 
+    @OneToOne(mappedBy = "pendataanPenduduk")
+    private PindahPenduduk pindahPenduduk;
+
     public PendataanPenduduk() {
     }
 
