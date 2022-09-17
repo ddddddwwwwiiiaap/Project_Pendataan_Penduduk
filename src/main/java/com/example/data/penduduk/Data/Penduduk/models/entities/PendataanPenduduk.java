@@ -6,11 +6,12 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="tbl_penduduk")
-public class Penduduk implements Serializable{
+public class PendataanPenduduk implements Serializable{
 
     private static final long serialVersionUID = 1L;
     
@@ -65,10 +66,18 @@ public class Penduduk implements Serializable{
     @Column(length=10)
     private String golonganDarah;
 
-    public Penduduk() {
+    //Entity Pindah Penduduk
+    @OneToOne
+    private Pindah pindah;
+
+    //Entity Kematian Penduduk
+    @OneToOne
+    private kematian kematian;
+
+    public PendataanPenduduk() {
     }
 
-    public Penduduk(Long nik, Long noKK, String nama, String alamat, String tempatLahir, Date tanggalLahir,
+    public PendataanPenduduk(Long nik, Long noKK, String nama, String alamat, String tempatLahir, Date tanggalLahir,
             String agama, String pendidikan, String pekerjaan, String statusPernikahan, String statusKeluarga,
             String kewarganegaraan, String noPaspor, String noKITAS, String namaAyah, String namaIbu,
             String golonganDarah) {
