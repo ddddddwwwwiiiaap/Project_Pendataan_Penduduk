@@ -6,6 +6,7 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -66,19 +67,13 @@ public class PendataanPenduduk implements Serializable{
     @Column(length=10)
     private String golonganDarah;
 
-    @OneToOne(mappedBy = "pendataanPenduduk")
-    private KematianPenduduk kematianPenduduk;
-
-    @OneToOne(mappedBy = "pendataanPenduduk")
-    private PindahPenduduk pindahPenduduk;
-
     public PendataanPenduduk() {
     }
 
     public PendataanPenduduk(Long nik, Long noKK, String nama, String alamat, String tempatLahir, Date tanggalLahir,
             String agama, String pendidikan, String pekerjaan, String statusPernikahan, String statusKeluarga,
             String kewarganegaraan, String noPaspor, String noKITAS, String namaAyah, String namaIbu,
-            String golonganDarah) {
+            String golonganDarah, PindahPenduduk pindahPenduduk) {
         this.nik = nik;
         this.noKK = noKK;
         this.nama = nama;
@@ -233,6 +228,4 @@ public class PendataanPenduduk implements Serializable{
     public void setGolonganDarah(String golonganDarah) {
         this.golonganDarah = golonganDarah;
     }
-
-    
 }

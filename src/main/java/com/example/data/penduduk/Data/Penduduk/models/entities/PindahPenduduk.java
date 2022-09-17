@@ -2,6 +2,7 @@ package com.example.data.penduduk.Data.Penduduk.models.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,24 +31,25 @@ public class PindahPenduduk implements Serializable{
     @Column(length=50)
     private String jumlah_keluargapindah;
 
-    @Column(length=50)
-    private String pendataan_pendudukNIK;
-
-    @OneToOne
-    @JoinColumn(name = "pendataan_pendudukNIK" , referencedColumnName = "NIK")
-    private PendataanPenduduk pendataan_penduduk;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "pendataan_pendudukNIK", referencedColumnName = "NIK")
+    private PendataanPenduduk pendataanpenduduk;
 
     public PindahPenduduk(){
     }
 
+    
+
     public PindahPenduduk(Long id, String nama_kepalakeluarga, String alamat_sekarang, String jumlah_keluargapindah,
-            String pendataan_pendudukNIK) {
+            PendataanPenduduk pendataanpenduduk) {
         this.id = id;
         this.nama_kepalakeluarga = nama_kepalakeluarga;
         this.alamat_sekarang = alamat_sekarang;
         this.jumlah_keluargapindah = jumlah_keluargapindah;
-        this.pendataan_pendudukNIK = pendataan_pendudukNIK;
+        this.pendataanpenduduk = pendataanpenduduk;
     }
+
+
 
     public Long getId() {
         return id;
@@ -81,12 +83,16 @@ public class PindahPenduduk implements Serializable{
         this.jumlah_keluargapindah = jumlah_keluargapindah;
     }
 
-    public String getPendataan_pendudukNIK() {
-        return pendataan_pendudukNIK;
+
+
+    public PendataanPenduduk getPendataanpenduduk() {
+        return pendataanpenduduk;
     }
 
-    public void setPendataan_pendudukNIK(String pendataan_pendudukNIK) {
-        this.pendataan_pendudukNIK = pendataan_pendudukNIK;
+
+
+    public void setPendataanpenduduk(PendataanPenduduk pendataanpenduduk) {
+        this.pendataanpenduduk = pendataanpenduduk;
     }
 
     

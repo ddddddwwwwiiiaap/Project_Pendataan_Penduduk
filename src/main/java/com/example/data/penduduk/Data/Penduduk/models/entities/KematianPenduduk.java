@@ -3,8 +3,8 @@ package com.example.data.penduduk.Data.Penduduk.models.entities;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
-import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,24 +35,24 @@ public class KematianPenduduk implements Serializable{
     private Time waktu_kematian;
 
     private Long id_NIKpendataan_penduduk;
-
-    @OneToOne
-    @JoinColumn(name = "pendataan_pendudukNIK" , referencedColumnName = "NIK")
-    private PendataanPenduduk pendataan_penduduk;
+    
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "pendataan_pendudukNIK", referencedColumnName = "NIK")
+    private PendataanPenduduk pendataanpenduduk;
 
     public KematianPenduduk(){
 
     }
 
     public KematianPenduduk(Long id, String penyebab_kematian, String tempat_kematian, Date tgl_kematian,
-            Time waktu_kematian, Long id_NIKpendataan_penduduk, PendataanPenduduk pendataan_penduduk) {
+            Time waktu_kematian, Long id_NIKpendataan_penduduk, PendataanPenduduk pendataanpenduduk) {
         this.id = id;
         this.penyebab_kematian = penyebab_kematian;
         this.tempat_kematian = tempat_kematian;
         this.tgl_kematian = tgl_kematian;
         this.waktu_kematian = waktu_kematian;
         this.id_NIKpendataan_penduduk = id_NIKpendataan_penduduk;
-        this.pendataan_penduduk = pendataan_penduduk;
+        this.pendataanpenduduk = pendataanpenduduk;
     }
 
     public Long getId() {
@@ -103,13 +103,11 @@ public class KematianPenduduk implements Serializable{
         this.id_NIKpendataan_penduduk = id_NIKpendataan_penduduk;
     }
 
-    public PendataanPenduduk getPendataan_penduduk() {
-        return pendataan_penduduk;
+    public PendataanPenduduk getPendataanpenduduk() {
+        return pendataanpenduduk;
     }
 
-    public void setPendataan_penduduk(PendataanPenduduk pendataan_penduduk) {
-        this.pendataan_penduduk = pendataan_penduduk;
-    }
-
-   
+    public void setPendataanpenduduk(PendataanPenduduk pendataanpenduduk) {
+        this.pendataanpenduduk = pendataanpenduduk;
+    }    
 }
