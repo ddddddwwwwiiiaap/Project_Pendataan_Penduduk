@@ -16,7 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tbl_kematian")
-public class Kematian implements Serializable{
+public class kematian implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
@@ -33,17 +33,16 @@ public class Kematian implements Serializable{
     private Date tgl_kematian;
 
     private Time waktu_kematian;
-    
-    private String pendataan_pendudukNIK;
 
-    
     private Long id_NIKpendataan_penduduk;
 
-    public Kematian(){
+    private String pendataan_pendudukNIK;
+
+    public kematian(){
 
     }
 
-    public Kematian(Long id, String penyebab_kematian, String tempat_kematian, Date tgl_kematian, Time waktu_kematian,
+    public kematian(Long id, String penyebab_kematian, String tempat_kematian, Date tgl_kematian, Time waktu_kematian,
             Long id_NIKpendataan_penduduk, String pendataan_pendudukNIK) {
         this.id = id;
         this.penyebab_kematian = penyebab_kematian;
