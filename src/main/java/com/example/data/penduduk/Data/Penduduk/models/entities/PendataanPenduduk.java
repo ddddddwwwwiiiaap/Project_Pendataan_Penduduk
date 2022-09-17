@@ -66,14 +66,6 @@ public class PendataanPenduduk implements Serializable{
     @Column(length=10)
     private String golonganDarah;
 
-    //Entity Pindah Penduduk
-    @OneToOne
-    private PindahPenduduk pindahPenduduk;
-
-    //Entity Kematian Penduduk
-    @OneToOne
-    private KematianPenduduk kematianPenduduk;
-
     public PendataanPenduduk() {
     }
 
