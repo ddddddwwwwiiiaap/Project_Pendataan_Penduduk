@@ -66,6 +66,9 @@ public class PendataanPenduduk implements Serializable{
     @Column(length=10)
     private String golonganDarah;
 
+    @OneToOne(mappedBy = "pendataanPenduduk")
+    private KematianPenduduk kematianPenduduk;
+
     public PendataanPenduduk() {
     }
 

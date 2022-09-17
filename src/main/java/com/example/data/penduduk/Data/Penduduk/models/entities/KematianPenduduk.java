@@ -10,7 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -35,21 +36,23 @@ public class KematianPenduduk implements Serializable{
 
     private Long id_NIKpendataan_penduduk;
 
-    private String pendataan_pendudukNIK;
+    @OneToOne
+    @JoinColumn(name = "pendataan_pendudukNIK" , referencedColumnName = "NIK")
+    private PendataanPenduduk pendataan_penduduk;
 
     public KematianPenduduk(){
 
     }
 
-    public KematianPenduduk(Long id, String penyebab_kematian, String tempat_kematian, Date tgl_kematian, Time waktu_kematian,
-            Long id_NIKpendataan_penduduk, String pendataan_pendudukNIK) {
+    public KematianPenduduk(Long id, String penyebab_kematian, String tempat_kematian, Date tgl_kematian,
+            Time waktu_kematian, Long id_NIKpendataan_penduduk, PendataanPenduduk pendataan_penduduk) {
         this.id = id;
         this.penyebab_kematian = penyebab_kematian;
         this.tempat_kematian = tempat_kematian;
         this.tgl_kematian = tgl_kematian;
         this.waktu_kematian = waktu_kematian;
         this.id_NIKpendataan_penduduk = id_NIKpendataan_penduduk;
-        this.pendataan_pendudukNIK = pendataan_pendudukNIK;
+        this.pendataan_penduduk = pendataan_penduduk;
     }
 
     public Long getId() {
@@ -100,13 +103,13 @@ public class KematianPenduduk implements Serializable{
         this.id_NIKpendataan_penduduk = id_NIKpendataan_penduduk;
     }
 
-    public String getPendataan_pendudukNIK() {
-        return pendataan_pendudukNIK;
+    public PendataanPenduduk getPendataan_penduduk() {
+        return pendataan_penduduk;
     }
 
-    public void setPendataan_pendudukNIK(String pendataan_pendudukNIK) {
-        this.pendataan_pendudukNIK = pendataan_pendudukNIK;
+    public void setPendataan_penduduk(PendataanPenduduk pendataan_penduduk) {
+        this.pendataan_penduduk = pendataan_penduduk;
     }
 
-    
+   
 }
