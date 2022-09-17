@@ -33,10 +33,7 @@ public class Kematian implements Serializable{
     private Date tgl_kematian;
 
     private Time waktu_kematian;
-
-    @OneToOne
-    @JoinColumn(name = "pendataan_pendudukNIK", referencedColumnName = "NIK")
-    @Column(length=50,  unique = true)
+    
     private String pendataan_pendudukNIK;
 
     
