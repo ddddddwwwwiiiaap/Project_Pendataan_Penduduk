@@ -68,11 +68,11 @@ public class PendataanPenduduk implements Serializable{
 
     //Entity Pindah Penduduk
     @OneToOne
-    private Pindah pindah;
+    private PindahPenduduk pindahPenduduk;
 
     //Entity Kematian Penduduk
     @OneToOne
-    private kematian kematian;
+    private KematianPenduduk kematianPenduduk;
 
     public PendataanPenduduk() {
     }
