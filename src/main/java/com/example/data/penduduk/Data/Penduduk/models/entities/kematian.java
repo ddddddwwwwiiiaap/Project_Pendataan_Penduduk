@@ -9,6 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -31,10 +34,13 @@ public class Kematian implements Serializable{
 
     private Time waktu_kematian;
 
-    private Long id_NIKpendataan_penduduk;
-
+    @OneToOne
+    @JoinColumn(name = "pendataan_pendudukNIK", referencedColumnName = "NIK")
     @Column(length=50,  unique = true)
     private String pendataan_pendudukNIK;
+
+    
+    private Long id_NIKpendataan_penduduk;
 
     public Kematian(){
 
