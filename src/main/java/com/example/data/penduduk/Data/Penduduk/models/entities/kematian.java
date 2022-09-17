@@ -3,20 +3,19 @@ package com.example.data.penduduk.Data.Penduduk.models.entities;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tbl_kematian")
-public class kematian implements Serializable{
+public class Kematian implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
@@ -38,11 +37,11 @@ public class kematian implements Serializable{
 
     private String pendataan_pendudukNIK;
 
-    public kematian(){
+    public Kematian(){
 
     }
 
-    public kematian(Long id, String penyebab_kematian, String tempat_kematian, Date tgl_kematian, Time waktu_kematian,
+    public Kematian(Long id, String penyebab_kematian, String tempat_kematian, Date tgl_kematian, Time waktu_kematian,
             Long id_NIKpendataan_penduduk, String pendataan_pendudukNIK) {
         this.id = id;
         this.penyebab_kematian = penyebab_kematian;
