@@ -1,5 +1,9 @@
 package com.example.data.penduduk.Data.Penduduk.models.repos;
 
-public class UserRepo {
+import org.springframework.data.repository.CrudRepository;
+
+import com.example.data.penduduk.Data.Penduduk.models.entities.User;
+
+public interface UserRepo extends CrudRepository<User, Long>{
     
 }
