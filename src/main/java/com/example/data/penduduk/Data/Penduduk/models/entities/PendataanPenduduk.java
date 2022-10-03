@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="tbl_pendataanPenduduk")
@@ -21,6 +22,8 @@ public class PendataanPenduduk implements Serializable{
     @Column(length=16, nullable=false, unique = true)
     private Long noKK;
 
+    
+    @NotEmpty(message = "Name is required")
     @Column(length=100)
     private String nama;
 
