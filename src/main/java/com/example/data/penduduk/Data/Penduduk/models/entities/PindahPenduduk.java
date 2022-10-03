@@ -95,5 +95,11 @@ public class PindahPenduduk implements Serializable{
         this.pendataanpenduduk = pendataanpenduduk;
     }
 
+
+
+    public PindahPenduduk save(PindahPenduduk pindahPenduduk) {
+        return null;
+    }
+
     
 }
