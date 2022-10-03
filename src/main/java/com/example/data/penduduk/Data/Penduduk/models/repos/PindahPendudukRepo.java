@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.example.data.penduduk.Data.Penduduk.models.entities.PindahPenduduk;
 
-public interface PindahRepo extends CrudRepository<PindahPenduduk, Long> {
+public interface PindahPendudukRepo extends CrudRepository<PindahPenduduk, Long> {
 
     //List<PindahPenduduk> findByNamaContains(String nama_kepalakeluarga);
 }

@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.data.penduduk.Data.Penduduk.models.entities.PindahPenduduk;
-import com.example.data.penduduk.Data.Penduduk.services.PindahService;
+import com.example.data.penduduk.Data.Penduduk.services.PindahPendudukService;
 
 @RestController
 @RequestMapping("/api/pindah")
-public class PindahController {
+public class PindahPendudukController {
 
     @Autowired
-    private PindahService pindahService;
+    private PindahPendudukService pindahService;
 
     @PostMapping
     public PindahPenduduk create(@RequestBody PindahPenduduk pindahPenduduk){

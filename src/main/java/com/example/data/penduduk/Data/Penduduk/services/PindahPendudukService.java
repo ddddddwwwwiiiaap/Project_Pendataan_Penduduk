@@ -8,14 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.data.penduduk.Data.Penduduk.models.entities.PindahPenduduk;
-import com.example.data.penduduk.Data.Penduduk.models.repos.PindahRepo;
+import com.example.data.penduduk.Data.Penduduk.models.repos.PindahPendudukRepo;
 
 @Service
 @Transactional
-public class PindahService {
+public class PindahPendudukService {
 
     @Autowired
-    private PindahRepo pindahRepo;
+    private PindahPendudukRepo pindahRepo;
 
     public PindahPenduduk save(PindahPenduduk pindahPenduduk){
         return pindahRepo.save(pindahPenduduk);
