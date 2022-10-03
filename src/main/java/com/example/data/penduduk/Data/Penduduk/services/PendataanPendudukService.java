@@ -38,7 +38,7 @@ public class PendataanPendudukService {
         pendataanPendudukRepo.deleteById(id);
     }
 
-    public List<PendataanPenduduk> findByName(String name){
-        return pendataanPendudukRepo.findByNameConstains(name);
+    public List<PendataanPenduduk> findByName(String nama){
+        return pendataanPendudukRepo.findByNameConstains(nama);
     }
 }
