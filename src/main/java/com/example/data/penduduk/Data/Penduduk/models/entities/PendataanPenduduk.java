@@ -6,8 +6,6 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,10 +15,10 @@ public class PendataanPenduduk implements Serializable{
     private static final long serialVersionUID = 1L;
     
     @Id
-    @Column(length=100, nullable=false, unique = true)
+    @Column(length=16, nullable=false, unique = true)
     private Long nik;
 
-    @Column(length=100, nullable=false, unique = true)
+    @Column(length=16, nullable=false, unique = true)
     private Long noKK;
 
     @Column(length=100)
