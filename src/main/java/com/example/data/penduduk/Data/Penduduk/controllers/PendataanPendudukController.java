@@ -50,9 +50,9 @@ public class PendataanPendudukController {
         return pendataanPendudukService.findAll();
     }
 
-    @GetMapping("/{id}")
-    public PendataanPenduduk findOne(@PathVariable("id")Long id){
-        return pendataanPendudukService.findOne(id);
+    @GetMapping("/{nik}")
+    public PendataanPenduduk findOne(@PathVariable("id")Long nik){
+        return pendataanPendudukService.findOne(nik);
     }
 
     @PutMapping
@@ -72,9 +72,9 @@ public class PendataanPendudukController {
         return ResponseEntity.ok(responseData);
     }
 
-    @DeleteMapping("/{id}")
-    public void removeOne(@PathVariable("id")Long id){
-        pendataanPendudukService.removeOne(id);
+    @DeleteMapping("/{nik}")
+    public void removeOne(@PathVariable("nik")Long nik){
+        pendataanPendudukService.removeOne(nik);
     }
 
 }
