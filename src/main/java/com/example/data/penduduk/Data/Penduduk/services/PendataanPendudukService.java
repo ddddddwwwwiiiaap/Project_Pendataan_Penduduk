@@ -40,7 +40,7 @@ public class PendataanPendudukService {
 
     /*
     public List<PendataanPenduduk> findByName(String nama){
-        return pendataanPendudukRepo.findByNameConstains(nama);
+        return pendataanPendudukRepo.findByNamaContains(nama);
     }
     */
 }
