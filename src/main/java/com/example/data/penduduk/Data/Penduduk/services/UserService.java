@@ -1,5 +1,6 @@
 package com.example.data.penduduk.Data.Penduduk.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -36,10 +37,9 @@ public class UserService {
     public void removeOne(Long id){
         userRepo.deleteById(id);
     }
-/* 
-    public List<User> findByName(String nama){
-        return userRepo.findByNameConstains(nama);
+
+    public List<User> findByName(String username){
+        return userRepo.findByUsernameContains(username);
     }
-*/
 
 }
