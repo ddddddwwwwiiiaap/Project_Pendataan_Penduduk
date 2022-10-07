@@ -21,7 +21,7 @@ public class PindahPendudukService {
         return pindahRepo.save(pindahPenduduk);
     }
     
-    public PindahPenduduk findById(Long id){
+    public PindahPenduduk findOne(Long id){
         return pindahRepo.findById(id).get();
     }
 
@@ -33,8 +33,7 @@ public class PindahPendudukService {
         pindahRepo.deleteById(id);
     }
 
-    /*public List<PindahPenduduk> findByNama(String nama_kepalakeluarga){
-        return pindahRepo.findByNamaContains(nama_kepalakeluarga);
-    }
-    */
+    public List<PindahPenduduk> findByName(String namakepalakeluarga){
+        return pindahRepo.findBynamakepalakeluargaContaining(namakepalakeluarga);
+    }    
 }

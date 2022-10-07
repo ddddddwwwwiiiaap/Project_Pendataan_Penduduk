@@ -8,5 +8,5 @@ import com.example.data.penduduk.Data.Penduduk.models.entities.PindahPenduduk;
 
 public interface PindahPendudukRepo extends CrudRepository<PindahPenduduk, Long> {
 
-    //List<PindahPenduduk> findByNamaContains(String nama_kepalakeluarga);
+    List<PindahPenduduk> findBynamakepalakeluargaContaining(String namakepalakeluarga);
 }
