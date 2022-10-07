@@ -1,6 +1,6 @@
 package com.example.data.penduduk.Data.Penduduk.models.repos;
 
-//import java.util.List;
+import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -8,5 +8,6 @@ import com.example.data.penduduk.Data.Penduduk.models.entities.PendataanPenduduk
 
 public interface PendataanPendudukRepo extends CrudRepository<PendataanPenduduk, Long>{
     
-    //List<PendataanPenduduk> findByNameConstains(String nama);
+    List<PendataanPenduduk> findByNamaContains(String nama);
+
 }

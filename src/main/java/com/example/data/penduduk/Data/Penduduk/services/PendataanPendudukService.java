@@ -1,6 +1,6 @@
 package com.example.data.penduduk.Data.Penduduk.services;
 
-//import java.util.List;
+import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -37,9 +37,8 @@ public class PendataanPendudukService {
     public void removeOne(Long nik){
         pendataanPendudukRepo.deleteById(nik);
     }
-/* 
+
     public List<PendataanPenduduk> findByName(String nama){
-        return pendataanPendudukRepo.findByNameConstains(nama);
+        return pendataanPendudukRepo.findByNamaContains(nama);
     }
-*/
 }
