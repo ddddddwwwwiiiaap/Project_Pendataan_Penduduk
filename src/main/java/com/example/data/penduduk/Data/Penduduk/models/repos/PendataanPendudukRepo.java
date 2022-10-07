@@ -8,6 +8,6 @@ import com.example.data.penduduk.Data.Penduduk.models.entities.PendataanPenduduk
 
 public interface PendataanPendudukRepo extends CrudRepository<PendataanPenduduk, Long>{
     
-    List<PendataanPenduduk> findByNameConstains(String nama);
+    List<PendataanPenduduk> findByNamaContaining(String nama);
 
 }
