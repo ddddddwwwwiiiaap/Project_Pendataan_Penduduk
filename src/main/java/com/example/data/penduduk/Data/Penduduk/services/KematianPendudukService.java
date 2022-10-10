@@ -21,19 +21,11 @@ public class KematianPendudukService {
         return kematianPendudukRepo.save(kematianPenduduk);
     }
 
-    public KematianPenduduk findById(Long id) {
-        return kematianPendudukRepo.findById(id).get();
-    }
+
 
     public Iterable<KematianPenduduk> findAll() {
         return kematianPendudukRepo.findAll();
     }
 
-    public void removeOne(Long id) {
-        kematianPendudukRepo.deleteById(id);
-    }
-
-    public List<KematianPenduduk> findByName(String idNIKpendataanpenduduk) {
-        return kematianPendudukRepo.findByidNIKpendataanpendudukContaining(idNIKpendataanpenduduk);
-    }
+  
 }
