@@ -51,7 +51,7 @@ public class PendataanPendudukController {
     }
 
     @GetMapping("/{nik}")
-    public PendataanPenduduk findOne(@PathVariable("id")Long nik){
+    public PendataanPenduduk findOne(@PathVariable("id")Character nik){
         return pendataanPendudukService.findOne(nik);
     }
 
@@ -73,7 +73,7 @@ public class PendataanPendudukController {
     }
 
     @DeleteMapping("/{nik}")
-    public void removeOne(@PathVariable("nik")Long nik){
+    public void removeOne(@PathVariable("nik")Character nik){
         pendataanPendudukService.removeOne(nik);
     }
 
