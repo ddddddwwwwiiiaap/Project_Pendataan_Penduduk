@@ -229,7 +229,4 @@ public class PendataanPenduduk implements Serializable{
     public void setGolonganDarah(String golonganDarah) {
         this.golonganDarah = golonganDarah;
     }
-
-    
-
 }
