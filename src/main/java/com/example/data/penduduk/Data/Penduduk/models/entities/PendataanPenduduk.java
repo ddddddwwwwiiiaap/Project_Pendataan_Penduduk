@@ -23,7 +23,7 @@ public class PendataanPenduduk implements Serializable{
     private char noKK;
 
     
-    @NotEmpty(message = "Name is required")
+    @NotEmpty(message = "nama harus di isi")
     @Column(length=100)
     private String nama;
 
