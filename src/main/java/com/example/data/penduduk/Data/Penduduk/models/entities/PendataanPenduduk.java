@@ -17,10 +17,10 @@ public class PendataanPenduduk implements Serializable{
     
     @Id
     @Column(length=16, nullable=false, unique = true)
-    private Long nik;
+    private char nik;
 
     @Column(length=16, nullable=false, unique = true)
-    private Long noKK;
+    private char noKK;
 
     
     @NotEmpty(message = "Name is required")
@@ -35,7 +35,7 @@ public class PendataanPenduduk implements Serializable{
 
     private Date tanggalLahir;
 
-    @Column(length=10)
+    @Column(length=9)
     private String agama;
 
     @Column(length=50)
@@ -44,19 +44,19 @@ public class PendataanPenduduk implements Serializable{
     @Column(length=50)
     private String pekerjaan;
 
-    @Column(length=50)
+    @Column(length=11)
     private String statusPernikahan;
 
-    @Column(length=50)
+    @Column(length=15)
     private String statusKeluarga;
 
-    @Column(length=50)
-    private String kewarganegaraan;
+    @Column(length=3)
+    private char kewarganegaraan;
 
-    @Column(length=50,  unique = true)
+    @Column(length=17,  unique = true)
     private String noPaspor;
 
-    @Column(length=50,  unique = true)
+    @Column(length=16,  unique = true)
     private String noKITAS;
 
     @Column(length=100)
@@ -65,16 +65,16 @@ public class PendataanPenduduk implements Serializable{
     @Column(length=100)
     private String namaIbu;
 
-    @Column(length=10)
+    @Column(length=2)
     private String golonganDarah;
 
     public PendataanPenduduk() {
     }
 
-    public PendataanPenduduk(Long nik, Long noKK, String nama, String alamat, String tempatLahir, Date tanggalLahir,
-            String agama, String pendidikan, String pekerjaan, String statusPernikahan, String statusKeluarga,
-            String kewarganegaraan, String noPaspor, String noKITAS, String namaAyah, String namaIbu,
-            String golonganDarah, PindahPenduduk pindahPenduduk) {
+    public PendataanPenduduk(char nik, char noKK, @NotEmpty(message = "Name is required") String nama, String alamat,
+            String tempatLahir, Date tanggalLahir, String agama, String pendidikan, String pekerjaan,
+            String statusPernikahan, String statusKeluarga, char kewarganegaraan, String noPaspor, String noKITAS,
+            String namaAyah, String namaIbu, String golonganDarah) {
         this.nik = nik;
         this.noKK = noKK;
         this.nama = nama;
@@ -94,19 +94,19 @@ public class PendataanPenduduk implements Serializable{
         this.golonganDarah = golonganDarah;
     }
 
-    public Long getNik() {
+    public char getNik() {
         return nik;
     }
 
-    public void setNik(Long nik) {
+    public void setNik(char nik) {
         this.nik = nik;
     }
 
-    public Long getNoKK() {
+    public char getNoKK() {
         return noKK;
     }
 
-    public void setNoKK(Long noKK) {
+    public void setNoKK(char noKK) {
         this.noKK = noKK;
     }
 
@@ -182,11 +182,11 @@ public class PendataanPenduduk implements Serializable{
         this.statusKeluarga = statusKeluarga;
     }
 
-    public String getKewarganegaraan() {
+    public char getKewarganegaraan() {
         return kewarganegaraan;
     }
 
-    public void setKewarganegaraan(String kewarganegaraan) {
+    public void setKewarganegaraan(char kewarganegaraan) {
         this.kewarganegaraan = kewarganegaraan;
     }
 
@@ -229,4 +229,7 @@ public class PendataanPenduduk implements Serializable{
     public void setGolonganDarah(String golonganDarah) {
         this.golonganDarah = golonganDarah;
     }
+
+    
+
 }
