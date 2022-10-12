@@ -27,5 +27,7 @@ public class KematianPendudukService {
         return kematianPendudukRepo.findAll();
     }
 
-  
+    public List<KematianPenduduk> findByidNIKpendataanpenduduk(String idNIKpendataanpenduduk){
+        return kematianPendudukRepo.findByidNIKpendataanpendudukContaining(idNIKpendataanpenduduk);
+    }
 }
