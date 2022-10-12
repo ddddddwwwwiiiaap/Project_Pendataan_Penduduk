@@ -1,5 +1,8 @@
 package com.example.data.penduduk.Data.Penduduk.controllers;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +26,12 @@ import com.example.data.penduduk.Data.Penduduk.services.PendataanPendudukService
 @RestController
 @RequestMapping("/api/pendataanpenduduk")
 public class PendataanPendudukController {
+/*
+    Date date = new Date();
+    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+    String strDate = formatter.format(date);
+    System.out.println(strDate);*/
+    
     
     @Autowired
     private PendataanPendudukService pendataanPendudukService;
@@ -51,7 +60,7 @@ public class PendataanPendudukController {
     }
 
     @GetMapping("/{nik}")
-    public PendataanPenduduk findOne(@PathVariable("id")Character nik){
+    public PendataanPenduduk findOne(@PathVariable("id")Long nik){
         return pendataanPendudukService.findOne(nik);
     }
 
@@ -73,7 +82,7 @@ public class PendataanPendudukController {
     }
 
     @DeleteMapping("/{nik}")
-    public void removeOne(@PathVariable("nik")Character nik){
+    public void removeOne(@PathVariable("nik")Long nik){
         pendataanPendudukService.removeOne(nik);
     }
 

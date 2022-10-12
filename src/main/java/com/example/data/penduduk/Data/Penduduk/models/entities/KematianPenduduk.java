@@ -14,6 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name = "tbl_KematianPenduduk")
 public class KematianPenduduk implements Serializable{
@@ -30,6 +32,7 @@ public class KematianPenduduk implements Serializable{
     @Column(length=100)
     private String tempatkematian;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
     private Date tglkematian;
 
     private Time waktukematian;

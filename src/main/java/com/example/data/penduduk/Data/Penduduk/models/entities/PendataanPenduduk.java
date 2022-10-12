@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name="tbl_pendataanPenduduk")
 public class PendataanPenduduk implements Serializable{
@@ -17,12 +19,11 @@ public class PendataanPenduduk implements Serializable{
     
     @Id
     @Column(length=16, nullable=false, unique = true)
-    private char nik;
+    private long nik;
 
     @Column(length=16, nullable=false, unique = true)
-    private char noKK;
+    private Long noKK;
 
-    
     @NotEmpty(message = "nama harus di isi")
     @Column(length=100)
     private String nama;
@@ -33,6 +34,7 @@ public class PendataanPenduduk implements Serializable{
     @Column(length=100)
     private String tempatLahir;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
     private Date tanggalLahir;
 
     @Column(length=9)
@@ -51,13 +53,13 @@ public class PendataanPenduduk implements Serializable{
     private String statusKeluarga;
 
     @Column(length=3)
-    private char kewarganegaraan;
+    private Long kewarganegaraan;
 
     @Column(length=17,  unique = true)
-    private String noPaspor;
+    private Long noPaspor;
 
     @Column(length=16,  unique = true)
-    private String noKITAS;
+    private Long noKITAS;
 
     @Column(length=100)
     private String namaAyah;
@@ -71,9 +73,9 @@ public class PendataanPenduduk implements Serializable{
     public PendataanPenduduk() {
     }
 
-    public PendataanPenduduk(char nik, char noKK, @NotEmpty(message = "Name is required") String nama, String alamat,
+    public PendataanPenduduk(long nik, Long noKK, @NotEmpty(message = "nama harus di isi") String nama, String alamat,
             String tempatLahir, Date tanggalLahir, String agama, String pendidikan, String pekerjaan,
-            String statusPernikahan, String statusKeluarga, char kewarganegaraan, String noPaspor, String noKITAS,
+            String statusPernikahan, String statusKeluarga, Long kewarganegaraan, Long noPaspor, Long noKITAS,
             String namaAyah, String namaIbu, String golonganDarah) {
         this.nik = nik;
         this.noKK = noKK;
@@ -94,19 +96,19 @@ public class PendataanPenduduk implements Serializable{
         this.golonganDarah = golonganDarah;
     }
 
-    public char getNik() {
+    public long getNik() {
         return nik;
     }
 
-    public void setNik(char nik) {
+    public void setNik(long nik) {
         this.nik = nik;
     }
 
-    public char getNoKK() {
+    public Long getNoKK() {
         return noKK;
     }
 
-    public void setNoKK(char noKK) {
+    public void setNoKK(Long noKK) {
         this.noKK = noKK;
     }
 
@@ -182,27 +184,27 @@ public class PendataanPenduduk implements Serializable{
         this.statusKeluarga = statusKeluarga;
     }
 
-    public char getKewarganegaraan() {
+    public Long getKewarganegaraan() {
         return kewarganegaraan;
     }
 
-    public void setKewarganegaraan(char kewarganegaraan) {
+    public void setKewarganegaraan(Long kewarganegaraan) {
         this.kewarganegaraan = kewarganegaraan;
     }
 
-    public String getNoPaspor() {
+    public Long getNoPaspor() {
         return noPaspor;
     }
 
-    public void setNoPaspor(String noPaspor) {
+    public void setNoPaspor(Long noPaspor) {
         this.noPaspor = noPaspor;
     }
 
-    public String getNoKITAS() {
+    public Long getNoKITAS() {
         return noKITAS;
     }
 
-    public void setNoKITAS(String noKITAS) {
+    public void setNoKITAS(Long noKITAS) {
         this.noKITAS = noKITAS;
     }
 
@@ -229,4 +231,6 @@ public class PendataanPenduduk implements Serializable{
     public void setGolonganDarah(String golonganDarah) {
         this.golonganDarah = golonganDarah;
     }
+
+    
 }
