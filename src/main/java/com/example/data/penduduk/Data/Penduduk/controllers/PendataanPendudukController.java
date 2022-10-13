@@ -37,4 +37,19 @@ public class PendataanPendudukController {
         return pendataanPendudukService.findAll();
     }
 
+
+    @PostMapping
+    public PendataanPenduduk create(@RequestBody PendataanPenduduk pendataanPenduduk){
+        return pendataanPendudukService.save(pendataanPenduduk);
+    }
+
+    @PutMapping
+    public PendataanPenduduk edit(@RequestBody PendataanPenduduk pendataanPenduduk){
+        return pendataanPendudukService.save(pendataanPenduduk);
+    }
+
+    @DeleteMapping("/{id}")
+    public void remove(@PathVariable("id") String id){
+         pendataanPendudukService.removeone(id);
+    }
 }

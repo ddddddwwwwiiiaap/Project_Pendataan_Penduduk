@@ -18,11 +18,11 @@ public class PendataanPenduduk implements Serializable {
     private static final Long serialVersionUID = 1L;
 
     @Id
-    @Column(name="nik",columnDefinition="char(7)")
-    private char nik;
+    @Column(name="nik",columnDefinition="char(16)", length = 16)
+    private String nik;
 
-    @Column(name="nokk",columnDefinition="char(7)", nullable = false, unique = true)
-    private char noKK;
+    @Column(name="nokk",columnDefinition="char(16)", length = 16)
+    private String noKK;
     
 
     @NotEmpty(message = "nama harus di isi")
@@ -54,13 +54,13 @@ public class PendataanPenduduk implements Serializable {
     private String statusKeluarga;
 
     @Column(length = 3)
-    private Long kewarganegaraan;
+    private String kewarganegaraan;
 
     @Column(length = 17, unique = true)
-    private Long noPaspor;
+    private String noPaspor;
 
     @Column(length = 16, unique = true)
-    private Long noKITAS;
+    private String noKITAS;
 
     @Column(length = 100)
     private String namaAyah;
@@ -74,9 +74,9 @@ public class PendataanPenduduk implements Serializable {
     public PendataanPenduduk() {
     }
 
-    public PendataanPenduduk(char nik, char noKK, @NotEmpty(message = "nama harus di isi") String nama, String alamat,
-            String tempatLahir, Date tanggalLahir, String agama, String pendidikan, String pekerjaan,
-            String statusPernikahan, String statusKeluarga, Long kewarganegaraan, Long noPaspor, Long noKITAS,
+    public PendataanPenduduk(String nik, String noKK, @NotEmpty(message = "nama harus di isi") String nama,
+            String alamat, String tempatLahir, Date tanggalLahir, String agama, String pendidikan, String pekerjaan,
+            String statusPernikahan, String statusKeluarga, String kewarganegaraan, String noPaspor, String noKITAS,
             String namaAyah, String namaIbu, String golonganDarah) {
         this.nik = nik;
         this.noKK = noKK;
@@ -101,19 +101,19 @@ public class PendataanPenduduk implements Serializable {
         return serialVersionUID;
     }
 
-    public char getNik() {
+    public String getNik() {
         return nik;
     }
 
-    public void setNik(char nik) {
+    public void setNik(String nik) {
         this.nik = nik;
     }
 
-    public char getNoKK() {
+    public String getNoKK() {
         return noKK;
     }
 
-    public void setNoKK(char noKK) {
+    public void setNoKK(String noKK) {
         this.noKK = noKK;
     }
 
@@ -189,27 +189,27 @@ public class PendataanPenduduk implements Serializable {
         this.statusKeluarga = statusKeluarga;
     }
 
-    public Long getKewarganegaraan() {
+    public String getKewarganegaraan() {
         return kewarganegaraan;
     }
 
-    public void setKewarganegaraan(Long kewarganegaraan) {
+    public void setKewarganegaraan(String kewarganegaraan) {
         this.kewarganegaraan = kewarganegaraan;
     }
 
-    public Long getNoPaspor() {
+    public String getNoPaspor() {
         return noPaspor;
     }
 
-    public void setNoPaspor(Long noPaspor) {
+    public void setNoPaspor(String noPaspor) {
         this.noPaspor = noPaspor;
     }
 
-    public Long getNoKITAS() {
+    public String getNoKITAS() {
         return noKITAS;
     }
 
-    public void setNoKITAS(Long noKITAS) {
+    public void setNoKITAS(String noKITAS) {
         this.noKITAS = noKITAS;
     }
 
@@ -237,6 +237,7 @@ public class PendataanPenduduk implements Serializable {
         this.golonganDarah = golonganDarah;
     }
 
+    
     
 
 }

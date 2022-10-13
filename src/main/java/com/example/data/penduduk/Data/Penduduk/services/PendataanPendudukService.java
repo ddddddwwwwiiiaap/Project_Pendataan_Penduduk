@@ -27,7 +27,7 @@ public class PendataanPendudukService {
         return pendataanPendudukRepo.findAll();
     }
 
-    public void removeone(Character id){
+    public void removeone(String id){
         pendataanPendudukRepo.deleteById(id);
    }
 }
