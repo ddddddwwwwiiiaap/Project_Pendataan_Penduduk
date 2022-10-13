@@ -48,8 +48,8 @@ public class PendataanPendudukController {
         return pendataanPendudukService.save(pendataanPenduduk);
     }
 
-    @DeleteMapping("/{id}")
-    public void remove(@PathVariable("id") String id){
-         pendataanPendudukService.removeone(id);
+    @DeleteMapping("/delete/{nik}")
+    public void remove(@PathVariable("nik") String nik){
+         pendataanPendudukService.delete(nik);
     }
 }
