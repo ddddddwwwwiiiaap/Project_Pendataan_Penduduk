@@ -12,68 +12,69 @@ import javax.validation.constraints.NotEmpty;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name="tbl_pendataanPenduduk")
-public class PendataanPenduduk implements Serializable{
+@Table(name = "tbl_pendataanPenduduk")
+public class PendataanPenduduk implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    
+    private static final Long serialVersionUID = 1L;
+
     @Id
-    @Column(length=16, nullable=false, unique = true)
-    private long nik;
+    @Column(name="nik",columnDefinition="char(7)")
+    private char nik;
 
-    @Column(length=16, nullable=false, unique = true)
-    private Long noKK;
+    @Column(name="nokk",columnDefinition="char(7)", nullable = false, unique = true)
+    private char noKK;
+    
 
     @NotEmpty(message = "nama harus di isi")
-    @Column(length=100)
+    @Column(length = 100)
     private String nama;
 
-    @Column(length=150)
+    @Column(length = 150)
     private String alamat;
 
-    @Column(length=100)
+    @Column(length = 100)
     private String tempatLahir;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date tanggalLahir;
 
-    @Column(length=9)
+    @Column(length = 9)
     private String agama;
 
-    @Column(length=50)
+    @Column(length = 50)
     private String pendidikan;
 
-    @Column(length=50)
+    @Column(length = 50)
     private String pekerjaan;
 
-    @Column(length=11)
+    @Column(length = 11)
     private String statusPernikahan;
 
-    @Column(length=15)
+    @Column(length = 15)
     private String statusKeluarga;
 
-    @Column(length=3)
+    @Column(length = 3)
     private Long kewarganegaraan;
 
-    @Column(length=17,  unique = true)
+    @Column(length = 17, unique = true)
     private Long noPaspor;
 
-    @Column(length=16,  unique = true)
+    @Column(length = 16, unique = true)
     private Long noKITAS;
 
-    @Column(length=100)
+    @Column(length = 100)
     private String namaAyah;
 
-    @Column(length=100)
+    @Column(length = 100)
     private String namaIbu;
 
-    @Column(length=2)
+    @Column(length = 2)
     private String golonganDarah;
 
     public PendataanPenduduk() {
     }
 
-    public PendataanPenduduk(long nik, Long noKK, @NotEmpty(message = "nama harus di isi") String nama, String alamat,
+    public PendataanPenduduk(char nik, char noKK, @NotEmpty(message = "nama harus di isi") String nama, String alamat,
             String tempatLahir, Date tanggalLahir, String agama, String pendidikan, String pekerjaan,
             String statusPernikahan, String statusKeluarga, Long kewarganegaraan, Long noPaspor, Long noKITAS,
             String namaAyah, String namaIbu, String golonganDarah) {
@@ -96,19 +97,23 @@ public class PendataanPenduduk implements Serializable{
         this.golonganDarah = golonganDarah;
     }
 
-    public long getNik() {
+    public static Long getSerialversionuid() {
+        return serialVersionUID;
+    }
+
+    public char getNik() {
         return nik;
     }
 
-    public void setNik(long nik) {
+    public void setNik(char nik) {
         this.nik = nik;
     }
 
-    public Long getNoKK() {
+    public char getNoKK() {
         return noKK;
     }
 
-    public void setNoKK(Long noKK) {
+    public void setNoKK(char noKK) {
         this.noKK = noKK;
     }
 
@@ -233,4 +238,5 @@ public class PendataanPenduduk implements Serializable{
     }
 
     
+
 }

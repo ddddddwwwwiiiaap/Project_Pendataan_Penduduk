@@ -26,64 +26,15 @@ import com.example.data.penduduk.Data.Penduduk.services.PendataanPendudukService
 @RestController
 @RequestMapping("/api/pendataanpenduduk")
 public class PendataanPendudukController {
-/*
-    Date date = new Date();
-    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-    String strDate = formatter.format(date);
-    System.out.println(strDate);*/
     
     
     @Autowired
     private PendataanPendudukService pendataanPendudukService;
 
-    @PostMapping
-    public ResponseEntity<ResponseData<PendataanPenduduk>> create(@Valid @RequestBody PendataanPenduduk pendataanPenduduk, Errors errors){
-        
-        ResponseData<PendataanPenduduk> responseData = new ResponseData<>();
-        
-        if (errors.hasErrors()){
-            for (ObjectError error : errors.getAllErrors()) {
-                responseData.getMessages().add(error.getDefaultMessage());
-            }
-            responseData.setStatus(false);
-            responseData.setPayload(null);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
-        }
-        responseData.setStatus(true);
-        responseData.setPayload(pendataanPendudukService.save(pendataanPenduduk));
-        return ResponseEntity.ok(responseData);
-    }
 
     @GetMapping
-    public Iterable<PendataanPenduduk> findAll(){
+    public Iterable <PendataanPenduduk> findAll(){
         return pendataanPendudukService.findAll();
-    }
-
-    @GetMapping("/{nik}")
-    public PendataanPenduduk findOne(@PathVariable("id")Long nik){
-        return pendataanPendudukService.findOne(nik);
-    }
-
-    @PutMapping
-    public ResponseEntity<ResponseData<PendataanPenduduk>> update(@Valid @RequestBody PendataanPenduduk pendataanPenduduk, Errors errors){
-        ResponseData<PendataanPenduduk> responseData = new ResponseData<>();
-        
-        if (errors.hasErrors()){
-            for (ObjectError error : errors.getAllErrors()) {
-                responseData.getMessages().add(error.getDefaultMessage());
-            }
-            responseData.setStatus(false);
-            responseData.setPayload(null);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
-        }
-        responseData.setStatus(true);
-        responseData.setPayload(pendataanPendudukService.save(pendataanPenduduk)); //belum 100% valid karena dia akan memanggil class service lalu eksekusi database ada kemungkinan error saat save database.
-        return ResponseEntity.ok(responseData);
-    }
-
-    @DeleteMapping("/{nik}")
-    public void removeOne(@PathVariable("nik")Long nik){
-        pendataanPendudukService.removeOne(nik);
     }
 
 }
