@@ -1,5 +1,8 @@
 package com.example.data.penduduk.Data.Penduduk.controllers;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,57 +27,29 @@ import com.example.data.penduduk.Data.Penduduk.services.PendataanPendudukService
 @RequestMapping("/api/pendataanpenduduk")
 public class PendataanPendudukController {
     
+    
     @Autowired
     private PendataanPendudukService pendataanPendudukService;
 
-    @PostMapping
-    public ResponseEntity<ResponseData<PendataanPenduduk>> create(@Valid @RequestBody PendataanPenduduk pendataanPenduduk, Errors errors){
-        
-        ResponseData<PendataanPenduduk> responseData = new ResponseData<>();
-        
-        if (errors.hasErrors()){
-            for (ObjectError error : errors.getAllErrors()) {
-                responseData.getMessages().add(error.getDefaultMessage());
-            }
-            responseData.setStatus(false);
-            responseData.setPayload(null);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
-        }
-        responseData.setStatus(true);
-        responseData.setPayload(pendataanPendudukService.save(pendataanPenduduk));
-        return ResponseEntity.ok(responseData);
-    }
 
     @GetMapping
-    public Iterable<PendataanPenduduk> findAll(){
+    public Iterable <PendataanPenduduk> findAll(){
         return pendataanPendudukService.findAll();
     }
 
-    @GetMapping("/{nik}")
-    public PendataanPenduduk findOne(@PathVariable("id")Character nik){
-        return pendataanPendudukService.findOne(nik);
+
+    @PostMapping
+    public PendataanPenduduk create(@RequestBody PendataanPenduduk pendataanPenduduk){
+        return pendataanPendudukService.save(pendataanPenduduk);
     }
 
     @PutMapping
-    public ResponseEntity<ResponseData<PendataanPenduduk>> update(@Valid @RequestBody PendataanPenduduk pendataanPenduduk, Errors errors){
-        ResponseData<PendataanPenduduk> responseData = new ResponseData<>();
-        
-        if (errors.hasErrors()){
-            for (ObjectError error : errors.getAllErrors()) {
-                responseData.getMessages().add(error.getDefaultMessage());
-            }
-            responseData.setStatus(false);
-            responseData.setPayload(null);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
-        }
-        responseData.setStatus(true);
-        responseData.setPayload(pendataanPendudukService.save(pendataanPenduduk)); //belum 100% valid karena dia akan memanggil class service lalu eksekusi database ada kemungkinan error saat save database.
-        return ResponseEntity.ok(responseData);
+    public PendataanPenduduk edit(@RequestBody PendataanPenduduk pendataanPenduduk){
+        return pendataanPendudukService.save(pendataanPenduduk);
     }
 
-    @DeleteMapping("/{nik}")
-    public void removeOne(@PathVariable("nik")Character nik){
-        pendataanPendudukService.removeOne(nik);
+    @DeleteMapping("/delete/{nik}")
+    public void remove(@PathVariable("nik") String nik){
+         pendataanPendudukService.delete(nik);
     }
-
 }

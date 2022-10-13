@@ -14,31 +14,20 @@ import com.example.data.penduduk.Data.Penduduk.models.repos.PendataanPendudukRep
 @Service
 @Transactional
 public class PendataanPendudukService {
-    
+
     @Autowired
     private PendataanPendudukRepo pendataanPendudukRepo;
 
-    public PendataanPenduduk save(PendataanPenduduk pendataanPenduduk){
-        return pendataanPendudukRepo.save(pendataanPenduduk);
+    public PendataanPenduduk save(PendataanPenduduk dPendataanPenduduk){
+        return pendataanPendudukRepo.save(dPendataanPenduduk);
+
     }
 
-    public PendataanPenduduk findOne(Character nik){
-        Optional<PendataanPenduduk> pendataanPenduduk = pendataanPendudukRepo.findById(nik);
-        if(!pendataanPenduduk.isPresent()){
-            return null;
-        }
-        return pendataanPenduduk.get();
-    }
-    
-    public Iterable<PendataanPenduduk> findAll(){
+    public Iterable <PendataanPenduduk> findAll(){
         return pendataanPendudukRepo.findAll();
     }
 
-    public void removeOne(Character nik){
-        pendataanPendudukRepo.deleteById(nik);
-    }
-
-    public List<PendataanPenduduk> findByName(String nama){
-        return pendataanPendudukRepo.findByNamaContaining(nama);
-    }
+    public void delete(String nama){
+        pendataanPendudukRepo.deleteById(nama);
+   }
 }

@@ -14,33 +14,37 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name = "tbl_KematianPenduduk")
-public class KematianPenduduk implements Serializable{
+public class KematianPenduduk implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length=500)
+    @Column(length = 500)
     private String penyebabkematian;
 
-    @Column(length=100)
+    @Column(length = 100)
     private String tempatkematian;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date tglkematian;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
     private Time waktukematian;
 
     private Long idNIKpendataanpenduduk;
-    
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "pendataan_pendudukNIK", referencedColumnName = "NIK")
     private PendataanPenduduk pendataanpenduduk;
 
-    public KematianPenduduk(){
+    public KematianPenduduk() {
 
     }
 
@@ -111,5 +115,4 @@ public class KematianPenduduk implements Serializable{
         this.pendataanpenduduk = pendataanpenduduk;
     }
 
-    
 }

@@ -9,71 +9,74 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
-@Table(name="tbl_pendataanPenduduk")
-public class PendataanPenduduk implements Serializable{
+@Table(name = "tbl_pendataanPenduduk")
+public class PendataanPenduduk implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    
+    private static final Long serialVersionUID = 1L;
+
     @Id
-    @Column(length=16, nullable=false, unique = true)
-    private char nik;
+    @Column(name="nik",columnDefinition="char(16)", length = 16)
+    private String nik;
 
-    @Column(length=16, nullable=false, unique = true)
-    private char noKK;
-
+    @Column(name="nokk",columnDefinition="char(16)", length = 16)
+    private String noKK;
     
+
     @NotEmpty(message = "nama harus di isi")
-    @Column(length=100)
+    @Column(length = 100)
     private String nama;
 
-    @Column(length=150)
+    @Column(length = 150)
     private String alamat;
 
-    @Column(length=100)
+    @Column(length = 100)
     private String tempatLahir;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date tanggalLahir;
 
-    @Column(length=9)
+    @Column(length = 9)
     private String agama;
 
-    @Column(length=50)
+    @Column(length = 50)
     private String pendidikan;
 
-    @Column(length=50)
+    @Column(length = 50)
     private String pekerjaan;
 
-    @Column(length=11)
+    @Column(length = 11)
     private String statusPernikahan;
 
-    @Column(length=15)
+    @Column(length = 15)
     private String statusKeluarga;
 
-    @Column(length=3)
-    private char kewarganegaraan;
+    @Column(length = 3)
+    private String kewarganegaraan;
 
-    @Column(length=17,  unique = true)
+    @Column(length = 17, unique = true)
     private String noPaspor;
 
-    @Column(length=16,  unique = true)
+    @Column(length = 16, unique = true)
     private String noKITAS;
 
-    @Column(length=100)
+    @Column(length = 100)
     private String namaAyah;
 
-    @Column(length=100)
+    @Column(length = 100)
     private String namaIbu;
 
-    @Column(length=2)
+    @Column(length = 2)
     private String golonganDarah;
 
     public PendataanPenduduk() {
     }
 
-    public PendataanPenduduk(char nik, char noKK, @NotEmpty(message = "Name is required") String nama, String alamat,
-            String tempatLahir, Date tanggalLahir, String agama, String pendidikan, String pekerjaan,
-            String statusPernikahan, String statusKeluarga, char kewarganegaraan, String noPaspor, String noKITAS,
+    public PendataanPenduduk(String nik, String noKK, @NotEmpty(message = "nama harus di isi") String nama,
+            String alamat, String tempatLahir, Date tanggalLahir, String agama, String pendidikan, String pekerjaan,
+            String statusPernikahan, String statusKeluarga, String kewarganegaraan, String noPaspor, String noKITAS,
             String namaAyah, String namaIbu, String golonganDarah) {
         this.nik = nik;
         this.noKK = noKK;
@@ -94,19 +97,23 @@ public class PendataanPenduduk implements Serializable{
         this.golonganDarah = golonganDarah;
     }
 
-    public char getNik() {
+    public static Long getSerialversionuid() {
+        return serialVersionUID;
+    }
+
+    public String getNik() {
         return nik;
     }
 
-    public void setNik(char nik) {
+    public void setNik(String nik) {
         this.nik = nik;
     }
 
-    public char getNoKK() {
+    public String getNoKK() {
         return noKK;
     }
 
-    public void setNoKK(char noKK) {
+    public void setNoKK(String noKK) {
         this.noKK = noKK;
     }
 
@@ -182,11 +189,11 @@ public class PendataanPenduduk implements Serializable{
         this.statusKeluarga = statusKeluarga;
     }
 
-    public char getKewarganegaraan() {
+    public String getKewarganegaraan() {
         return kewarganegaraan;
     }
 
-    public void setKewarganegaraan(char kewarganegaraan) {
+    public void setKewarganegaraan(String kewarganegaraan) {
         this.kewarganegaraan = kewarganegaraan;
     }
 
@@ -229,4 +236,8 @@ public class PendataanPenduduk implements Serializable{
     public void setGolonganDarah(String golonganDarah) {
         this.golonganDarah = golonganDarah;
     }
+
+    
+    
+
 }
