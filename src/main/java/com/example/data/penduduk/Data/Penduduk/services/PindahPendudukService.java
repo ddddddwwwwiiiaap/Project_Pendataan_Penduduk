@@ -35,5 +35,5 @@ public class PindahPendudukService {
 
     public List<PindahPenduduk> findByName(String namakepalakeluarga){
         return pindahRepo.findBynamakepalakeluargaContaining(namakepalakeluarga);
-    }    
+    }
 }
