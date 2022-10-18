@@ -8,6 +8,6 @@ import com.example.data.penduduk.Data.Penduduk.models.entities.PendataanPenduduk
 
 public interface PendataanPendudukRepo extends CrudRepository<PendataanPenduduk, String>{
 
-    List<PendataanPenduduk> findByNamaContaining(String nama);//nama method harus sesuai dengan nama entity
+    List<PendataanPenduduk> findByNamaContains(String nama); //nama method harus sesuai dengan nama entity
 
 }

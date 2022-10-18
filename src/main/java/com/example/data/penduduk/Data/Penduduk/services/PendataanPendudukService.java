@@ -32,6 +32,6 @@ public class PendataanPendudukService {
    }
 
    public List<PendataanPenduduk> findByName(String name){
-    return pendataanPendudukRepo.findByNamaContaining(name);
+    return pendataanPendudukRepo.findByNamaContains(name);
    }
 }
