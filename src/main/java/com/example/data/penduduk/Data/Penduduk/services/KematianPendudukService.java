@@ -21,13 +21,11 @@ public class KematianPendudukService {
         return kematianPendudukRepo.save(kematianPenduduk);
     }
 
-
-
     public Iterable<KematianPenduduk> findAll() {
         return kematianPendudukRepo.findAll();
     }
 
-    public List<KematianPenduduk> findByidNIKpendataanpenduduk(String idNIKpendataanpenduduk){
-        return kematianPendudukRepo.findByidNIKpendataanpendudukContaining(idNIKpendataanpenduduk);
+    public List<KematianPenduduk> findByName(String tempatkematian) {
+        return kematianPendudukRepo.findBytempatkematianContaining(tempatkematian);
     }
 }

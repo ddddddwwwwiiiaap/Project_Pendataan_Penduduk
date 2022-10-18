@@ -29,11 +29,11 @@ public class PindahPendudukService {
         return pindahRepo.findAll();
     }
 
-    public void removeOne(Long id){
+    public void delete(Long id){
         pindahRepo.deleteById(id);
-    }
+   }
 
-    public List<PindahPenduduk> findByName(String namakepalakeluarga){
-        return pindahRepo.findBynamakepalakeluargaContaining(namakepalakeluarga);
-    }
+   public List<PindahPenduduk> findByName(String namakepalakeluarga){
+    return pindahRepo.findByNamakepalakeluargaContains(namakepalakeluarga);
+   }
 }

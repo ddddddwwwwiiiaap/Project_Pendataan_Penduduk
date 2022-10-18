@@ -8,5 +8,5 @@ import com.example.data.penduduk.Data.Penduduk.models.entities.KematianPenduduk;
 
 public interface KematianPendudukRepo extends CrudRepository<KematianPenduduk, Long> {
 
-    List<KematianPenduduk> findByidNIKpendataanpendudukContaining(String idNIKpendataanpenduduk);
+    List<KematianPenduduk> findBytempatkematianContaining(String tempatkematian);
 }
