@@ -1,5 +1,7 @@
 package com.example.data.penduduk.Data.Penduduk.controllers;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.data.penduduk.Data.Penduduk.dto.ResponseData;
+import com.example.data.penduduk.Data.Penduduk.dto.SearchData;
 import com.example.data.penduduk.Data.Penduduk.models.entities.User;
 import com.example.data.penduduk.Data.Penduduk.services.UserService;
 
@@ -75,6 +78,11 @@ public class UserController {
     @DeleteMapping("/{id}")
     public void removeOne(@PathVariable("nik")Long id){
         userService.removeOne(id);
+    }
+
+    @PostMapping("/{search}/{username}")
+    public List<User> findByName(@RequestBody SearchData searchData) {
+        return userService.findByName(searchData.getSearchKey());
     }
 
 }
