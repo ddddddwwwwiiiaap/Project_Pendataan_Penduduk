@@ -30,4 +30,8 @@ public class PendataanPendudukService {
     public void delete(String nama){
         pendataanPendudukRepo.deleteById(nama);
    }
+
+   public List<PendataanPenduduk> findByName(String name){
+    return pendataanPendudukRepo.findByNamaContaining(name);
+   }
 }
