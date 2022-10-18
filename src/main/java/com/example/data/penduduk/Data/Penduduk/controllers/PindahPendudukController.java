@@ -26,4 +26,8 @@ public class PindahPendudukController {
     public Iterable<PindahPenduduk> findAll(){
         return pindahService.findAll();
     }
-}
+
+    //@PostMapping("/search/nama")
+    //public PindahPenduduk getByName(@RequestBody SearchData searchData){
+      //  return pindahService.findBynamakepalakeluargaContaining(searchData.namakepalakeluarga);
+    }
