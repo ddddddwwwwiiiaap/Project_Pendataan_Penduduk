@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -31,8 +32,12 @@ public class PindahPenduduk implements Serializable{
     @Column(length=50)
     private String jumlahkeluargapindah;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "pendataanpendudukNIK", referencedColumnName = "NIK")
+    @OneToOne
+    @JoinTable(     //konfigurasi tambahan, untuk konfigurasi tabel perantara yang menghubungkan tabel product dan tabel supplier karena M-M.
+        name="tbl_pindahpenduduk_pendataanpenduduk",
+        joinColumns = @JoinColumn(name="pindahpenduduk_id"),
+        inverseJoinColumns = @JoinColumn(name = "pendataanpenduduk_nik"))
+
     private PendataanPenduduk pendataanpenduduk;
 
     public PindahPenduduk(){

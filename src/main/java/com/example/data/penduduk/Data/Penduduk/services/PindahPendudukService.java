@@ -21,9 +21,6 @@ public class PindahPendudukService {
     @Autowired
     private PindahPendudukRepo pindahRepo;
 
-    @Autowired
-    private PendataanPendudukService pendataanPendudukService;
-
     public PindahPenduduk save(PindahPenduduk pindahPenduduk) {
         return pindahRepo.save(pindahPenduduk);
     }
@@ -46,14 +43,5 @@ public class PindahPendudukService {
 
     public List<PindahPenduduk> findByName(String namakepalakeluarga) {
         return pindahRepo.findByNamakepalakeluargaContains(namakepalakeluarga);
-    }
-
-    public void addPendataanpenduduk(PendataanPenduduk pendataanPenduduk, Long pindahendudukId){
-        PindahPenduduk pindahPenduduk = findOne(pindahendudukId);
-        if(pindahPenduduk == null){
-        throw new RuntimeException("Product with ID: "+pindahendudukId+ " not found");
-        }
-        pindahPenduduk.getPendataanpenduduk().add(pendataanPenduduk);
-        save(pindahPenduduk);
     }
 }

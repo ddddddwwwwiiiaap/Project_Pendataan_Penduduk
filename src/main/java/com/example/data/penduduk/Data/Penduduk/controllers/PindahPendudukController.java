@@ -76,11 +76,6 @@ public class PindahPendudukController {
         pindahService.delete(id);
     }
 
-    @PostMapping("/{nik}")
-    public void addPendataanpenduduk(@RequestBody PendataanPenduduk pendataanPenduduk, @PathVariable("nik") Long pendataanPendudukNIK) {
-        pindahService.addPendataanpenduduk(pendataanPenduduk, pendataanPendudukNIK);
-    }
-
     @PostMapping("/{search}/{namakepalakeluarga}")
     public List<PindahPenduduk> findByName(@RequestBody SearchData searchData) {
         return pindahService.findByName(searchData.getSearchKey());

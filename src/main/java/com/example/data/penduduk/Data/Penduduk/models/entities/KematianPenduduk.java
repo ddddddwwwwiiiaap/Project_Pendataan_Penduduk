@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -40,8 +41,8 @@ public class KematianPenduduk implements Serializable {
 
     private Long idNIKpendataanpenduduk;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "pendataan_pendudukNIK", referencedColumnName = "NIK")
+    @OneToOne
+    @JoinTable(name = "tbl_kematianpenduduk_pendataanpenduduk", joinColumns = @JoinColumn(name = "KematianPenduduk_id"), inverseJoinColumns = @JoinColumn(name = "pendataanpenduduk_nik"))
     private PendataanPenduduk pendataanpenduduk;
 
     public KematianPenduduk() {
