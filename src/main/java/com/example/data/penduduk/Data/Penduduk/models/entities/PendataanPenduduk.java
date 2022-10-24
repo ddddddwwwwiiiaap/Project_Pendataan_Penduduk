@@ -71,13 +71,16 @@ public class PendataanPenduduk implements Serializable {
     @Column(length = 2)
     private String golonganDarah;
 
+    @Column(length = 6)
+    private String jeniskelamin;
+
     public PendataanPenduduk() {
     }
 
     public PendataanPenduduk(String nik, String noKK, @NotEmpty(message = "nama harus di isi") String nama,
             String alamat, String tempatLahir, Date tanggalLahir, String agama, String pendidikan, String pekerjaan,
             String statusPernikahan, String statusKeluarga, String kewarganegaraan, String noPaspor, String noKITAS,
-            String namaAyah, String namaIbu, String golonganDarah) {
+            String namaAyah, String namaIbu, String golonganDarah, String jeniskelamin) {
         this.nik = nik;
         this.noKK = noKK;
         this.nama = nama;
@@ -95,10 +98,7 @@ public class PendataanPenduduk implements Serializable {
         this.namaAyah = namaAyah;
         this.namaIbu = namaIbu;
         this.golonganDarah = golonganDarah;
-    }
-
-    public static Long getSerialversionuid() {
-        return serialVersionUID;
+        this.jeniskelamin = jeniskelamin;
     }
 
     public String getNik() {
@@ -237,7 +237,12 @@ public class PendataanPenduduk implements Serializable {
         this.golonganDarah = golonganDarah;
     }
 
-    
-    
+    public String getJeniskelamin() {
+        return jeniskelamin;
+    }
+
+    public void setJeniskelamin(String jeniskelamin) {
+        this.jeniskelamin = jeniskelamin;
+    }
 
 }
