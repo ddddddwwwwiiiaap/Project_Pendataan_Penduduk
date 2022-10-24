@@ -1,24 +1,33 @@
 package com.example.data.penduduk.Data.Penduduk.dto;
 
 import javax.persistence.Column;
+import javax.validation.constraints.NotEmpty;
 
 public class KematianData {
     
+    @NotEmpty(message="NIK is required")
     @Column(name="nik",columnDefinition="char(16)", length = 16)
     private String nik;
 
+    @NotEmpty(message="Nama is required")
     private String nama;
 
+    @NotEmpty(message="Alamat is required")
     private String alamat;
 
+    @NotEmpty(message="Jenis Kelamin is required")
     private String jenisKelamin;
 
+    @NotEmpty(message="Agama is required")
     private String agama;
 
+    @NotEmpty(message="Tempat Lahir is required")
     private String tempatLahir;
 
+    @NotEmpty(message="Tanggal Lahir is required")
     private String tanggalLahir;
 
+    @NotEmpty(message="Kewarganegaraan is required")
     private String kewarganegaraan;
 
     public String getNik() {
