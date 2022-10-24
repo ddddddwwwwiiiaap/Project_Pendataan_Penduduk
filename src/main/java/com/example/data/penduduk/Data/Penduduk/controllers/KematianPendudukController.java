@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.data.penduduk.Data.Penduduk.dto.KematianData;
 import com.example.data.penduduk.Data.Penduduk.dto.ResponseData;
 import com.example.data.penduduk.Data.Penduduk.dto.SearchData;
 import com.example.data.penduduk.Data.Penduduk.models.entities.KematianPenduduk;
@@ -30,8 +32,11 @@ public class KematianPendudukController {
     @Autowired
     private KematianPendudukService kematianPendudukService;
 
+    @Autowired
+    private ModelMapper modelMapper;
+
     @PostMapping
-    public ResponseEntity<ResponseData<KematianPenduduk>> create(@Valid @RequestBody KematianPenduduk kematianPenduduk, Errors errors) {
+    public ResponseEntity<ResponseData<KematianPenduduk>> create(@Valid @RequestBody KematianData kematianData, Errors errors) {
 
         ResponseData<KematianPenduduk> responseData = new ResponseData<>();
 
@@ -43,6 +48,8 @@ public class KematianPendudukController {
             responseData.setPayload(null);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
         }
+
+        KematianPenduduk kematianPenduduk = modelMapper.map(kematianData, KematianPenduduk.class);
         responseData.setStatus(true);
         responseData.setPayload(kematianPendudukService.save(kematianPenduduk));
         return ResponseEntity.ok(responseData);
