@@ -23,7 +23,10 @@ import com.example.data.penduduk.Data.Penduduk.dto.KematianData;
 import com.example.data.penduduk.Data.Penduduk.dto.ResponseData;
 import com.example.data.penduduk.Data.Penduduk.dto.SearchData;
 import com.example.data.penduduk.Data.Penduduk.models.entities.KematianPenduduk;
+import com.example.data.penduduk.Data.Penduduk.models.entities.PendataanPenduduk;
+import com.example.data.penduduk.Data.Penduduk.models.repos.PendataanPendudukRepo;
 import com.example.data.penduduk.Data.Penduduk.services.KematianPendudukService;
+import com.example.data.penduduk.Data.Penduduk.services.PendataanPendudukService;
 
 @RestController
 @RequestMapping("/api/kematian")
@@ -33,26 +36,14 @@ public class KematianPendudukController {
     private KematianPendudukService kematianPendudukService;
 
     @Autowired
+    private PendataanPendudukRepo pendataanPendudukRepo;
+
+    @Autowired
     private ModelMapper modelMapper;
 
     @PostMapping
-    public ResponseEntity<ResponseData<KematianPenduduk>> create(@Valid @RequestBody KematianData kematianData, Errors errors) {
-
-        ResponseData<KematianPenduduk> responseData = new ResponseData<>();
-
-        if(errors.hasErrors()){
-            for (ObjectError error : errors.getAllErrors()){
-                responseData.getMessages().add(error.getDefaultMessage());
-            }
-            responseData.setStatus(false);
-            responseData.setPayload(null);
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
-        }
-
-        KematianPenduduk kematianPenduduk = modelMapper.map(kematianData, KematianPenduduk.class);
-        responseData.setStatus(true);
-        responseData.setPayload(kematianPendudukService.save(kematianPenduduk));
-        return ResponseEntity.ok(responseData);
+    public KematianPenduduk create(@RequestBody KematianPenduduk pendataanPenduduk) {
+        return kematianPendudukService.save(pendataanPenduduk);
     }
 
     @GetMapping
@@ -86,4 +77,30 @@ public class KematianPendudukController {
     public List<KematianPenduduk> findByName(@RequestBody SearchData searchData) {
         return kematianPendudukService.findByName(searchData.getSearchKey());
     }
+
+    @PostMapping("/kematiandto/{nik}")
+    public PendataanPenduduk findByNik(@RequestBody KematianData kematianData) {
+        return kematianPendudukService.findByNik(kematianData.getNik());
+    }
+    
+
+    /*@PostMapping("/kematiandto/{nik}")
+    public ResponseEntity<ResponseData<PendataanPenduduk>> getdto(@Valid @RequestBody KematianData kematianData, Errors errors) {
+
+        ResponseData<PendataanPenduduk> responseData = new ResponseData<>();
+
+        if(errors.hasErrors()){
+            for (ObjectError error : errors.getAllErrors()){
+                responseData.getMessages().add(error.getDefaultMessage());
+            }
+            responseData.setStatus(false);
+            responseData.setPayload(null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
+        }
+
+        PendataanPenduduk pendataanPenduduk = modelMapper.map(kematianData, PendataanPenduduk.class);
+        responseData.setStatus(true);
+        responseData.setPayload(kematianPendudukService.findByNik(kematianData.getNik()));
+        return ResponseEntity.ok(responseData);
+    }*/
 }
