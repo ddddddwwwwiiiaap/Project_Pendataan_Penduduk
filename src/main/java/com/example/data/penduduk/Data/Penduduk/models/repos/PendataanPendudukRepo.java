@@ -10,4 +10,6 @@ public interface PendataanPendudukRepo extends CrudRepository<PendataanPenduduk,
 
     List<PendataanPenduduk> findByNamaContains(String nama); //nama method harus sesuai dengan nama entity
 
+    PendataanPenduduk findByNikContains(String nik);
+
 }
