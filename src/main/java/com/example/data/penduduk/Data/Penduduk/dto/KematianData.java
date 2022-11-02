@@ -3,6 +3,8 @@ package com.example.data.penduduk.Data.Penduduk.dto;
 import javax.persistence.Column;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class KematianData {
     
     @NotEmpty(message="NIK is required")
@@ -25,6 +27,7 @@ public class KematianData {
     private String tempatLahir;
 
     @NotEmpty(message="Tanggal Lahir is required")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private String tanggalLahir;
 
     @NotEmpty(message="Kewarganegaraan is required")
