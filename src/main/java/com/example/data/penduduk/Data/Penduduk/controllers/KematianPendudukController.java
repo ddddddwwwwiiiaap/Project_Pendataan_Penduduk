@@ -42,7 +42,7 @@ public class KematianPendudukController {
     @Autowired
     private ModelMapper modelMapper;
 
-    private static final Logger logger = LogManager.getLogger(KematianPendudukController.class);
+ //   private static final Logger logger = LogManager.getLogger(KematianPendudukController.class);
 
     @PostMapping
     public KematianPenduduk create(@RequestBody KematianPenduduk pendataanPenduduk) {
@@ -84,7 +84,7 @@ public class KematianPendudukController {
 
     @GetMapping("/kematiandto/{findByNik}")
     public ResponseEntity<KematianData> findbyNik(@PathVariable("findByNik") String nik) {
-        logger.info("Find by NIK : {}", nik);
+       // logger.info("Find by NIK : {}", nik);
         PendataanPenduduk pendataanPenduduk = pendataanPendudukRepo.findByNikContains(nik);
         KematianData kematianData = modelMapper.map(pendataanPenduduk, KematianData.class);
         return new ResponseEntity<>(kematianData, HttpStatus.OK);
