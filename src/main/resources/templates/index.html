@@ -468,8 +468,63 @@
 
                     <!-- Content Row -->
                     <div class="row">
-
-
+                        <!-- Approach -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary"><b>Pendataan Penduduk</b></h6>
+                            </div>
+                            <div class="card-body">
+                                <!--Tabel penduduk-->
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>NIK</th>
+                                                <th>Nomer Kartu Keluarga</th>
+                                                <th>Nama</th>
+                                                <th>Alamat</th>
+                                                <th>Tempat Lahir</th>
+                                                <th>Tanggal Lahir</th>
+                                                <th>Agama</th>
+                                                <th>Pendidikan</th>
+                                                <th>Pekerjaan</th>
+                                                <th>Status Pernikahan</th>
+                                                <th>Status Keluarga</th>
+                                                <th>Kewarganegaraan</th>
+                                                <th>Nomer Paspor</th>
+                                                <th>Nomer KITAS</th>
+                                                <th>Nama Ayah</th>
+                                                <th>Nama Ibu</th>
+                                                <th>Golongan Darah</th>
+                                                <th>Jenis Kelamin</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="d: ${pendataan}">
+                                                <td th:text="${d.nik}"></td>
+                                                <td th:text="${d.noKK}"></td>
+                                                <td th:text="${d.nama}"></td>
+                                                <td th:text="${d.alamat}"></td>
+                                                <td th:text="${d.tempatLahir}"></td>
+                                                <td th:text="${d.tanggalLahir}"></td>
+                                                <td th:text="${d.agama}"></td>
+                                                <td th:text="${d.pendidikan}"></td>
+                                                <td th:text="${d.pekerjaan}"></td>
+                                                <td th:text="${d.statusPernikahan}"></td>
+                                                <td th:text="${d.statusKeluarga}"></td>
+                                                <td th:text="${d.kewarganegaraan}"></td>
+                                                <td th:text="${d.noPaspor}"></td>
+                                                <td th:text="${d.noKITAS}"></td>
+                                                <td th:text="${d.namaAyah}"></td>
+                                                <td th:text="${d.namaIbu}"></td>
+                                                <td th:text="${d.golonganDarah}"></td>
+                                                <td th:text="${d.jeniskelamin}"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
 
                         <!--Tabel penduduk-->
                         <div class="card shadow mb-4">
@@ -508,7 +563,6 @@
                                 </div>
                             </div>
                         </div>
-
 
                         <!--Tabel penduduk-->
                         <div class="card shadow mb-4">
@@ -550,8 +604,6 @@
                             </div>
                         </div>
                     </div>
-
-
 
                 </div>
                 <!-- /.container-fluid -->
