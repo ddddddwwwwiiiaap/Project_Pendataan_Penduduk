@@ -177,9 +177,9 @@
                             </a>
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
+                                <form class="form-inline mr-auto w-100 navbar-search" th:object="${searchData}" method="post" th:action="@{/search}">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" th:field="*{searchKey}">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -473,8 +473,21 @@
                             <div class="card-header py-3">
                                 <h6 class="m-0 font-weight-bold text-primary"><b>Pendataan Penduduk</b></h6>
                             </div>
+
                             <div class="card-body">
                                 <!--Tabel penduduk-->
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <form  method="post" th:object="${searchData}" th:action="@{/search}">
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="Cari Data Penduduk" name="searchKey" th:field="*{searchKey}">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-primary" type="submit">Cari</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
