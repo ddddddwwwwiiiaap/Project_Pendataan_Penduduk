@@ -4,6 +4,13 @@ public class SearchData {
     
     private String searchKey;
 
+    public SearchData() {
+    }
+
+    public SearchData(String searchKey) {
+        this.searchKey = searchKey;
+    }
+
     public String getSearchKey() {
         return searchKey;
     }
