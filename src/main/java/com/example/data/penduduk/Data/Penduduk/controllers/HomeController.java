@@ -15,6 +15,9 @@ import com.example.data.penduduk.Data.Penduduk.services.PindahPendudukService;
 public class HomeController {
 
     @Autowired
+    private PendataanPendudukService pendataanPendudukService;
+
+    @Autowired
     private PindahPendudukService pindahPendudukService;
 
     @Autowired
@@ -22,6 +25,7 @@ public class HomeController {
 
     @GetMapping
     public String index(Model model) {
+        model.addAttribute("pendataan", pendataanPendudukService.findAll());
         model.addAttribute("pindah", pindahPendudukService.findAll());
         model.addAttribute("kematian", kematianPendudukService.findAll());
         return "index";
