@@ -18,6 +18,7 @@ import com.example.data.penduduk.Data.Penduduk.models.repos.PindahPendudukRepo;
 @Transactional
 public class PindahPendudukService {
 
+    //test
     @Autowired
     private PindahPendudukRepo pindahRepo;
 
