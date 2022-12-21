@@ -40,4 +40,10 @@ public class HomeController {
         model.addAttribute("pendataan", pendataanPendudukService.findByName(searchData.getSearchKey()));
         return "index";
     }
+
+    @GetMapping("/tables_pendataanpenduduk")
+    public String tables_pendataanpenduduk(Model model) {
+        model.addAttribute("tables_pendataanpenduduk", pendataanPendudukService.findAll());
+        return "tables_pendataanpenduduk";
+    }
 }

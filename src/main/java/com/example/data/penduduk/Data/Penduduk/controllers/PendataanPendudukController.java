@@ -9,6 +9,8 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,12 +27,20 @@ import com.example.data.penduduk.Data.Penduduk.dto.SearchData;
 import com.example.data.penduduk.Data.Penduduk.models.entities.PendataanPenduduk;
 import com.example.data.penduduk.Data.Penduduk.services.PendataanPendudukService;
 
-@RestController
+@Controller
 @RequestMapping("/api/pendataanpenduduk")
 public class PendataanPendudukController {
 
     @Autowired
     private PendataanPendudukService pendataanPendudukService;
+/*
+    @GetMapping
+    public Iterable<PendataanPenduduk> findAll() {
+        return pendataanPendudukService.findAll();
+    }
+*/
+
+
 
     @GetMapping
     public Iterable<PendataanPenduduk> findAll() {

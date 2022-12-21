@@ -401,39 +401,25 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1234567890123456</td>
-                                            <td>1234567890123456</td>
-                                            <td>John Doe</td>
-                                            <td>1234 Main St</td>
-                                            <td>San Francisco</td>
-                                            <td>CA</td>
-                                            <td>94126</td>
-                                            <td>1234567890123456</td>
-                                            <td>1234567890123456</td>
-                                            <td>1234567890123456</td>
-                                            <td>1234567890123456</td>
-                                            <td>1234567890123456</td>
-                                            <td>1234567890123456</td>
-                                            <td>1234567890123456</td>
-                                            <td>1234567890123456</td>
-                                            <td>1234567890123456</td>
-                                            <td>1234567890123456</td>
-                                            <td>1234567890123456</td>
-                                            <td>
-                                                <a href="" class="btn btn-primary btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-edit"></i>
-                                                    </span>
-                                                    <span class="text">Edit</span>
-                                                </a>
-                                                <a href="" class="btn btn-danger btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-trash"></i>
-                                                    </span>
-                                                    <span class="text">Hapus</span>
-                                                </a>
-                                            </td>
+                                        <tr th:each="d: ${tables_pendataanpenduduk}">
+                                            <td th:text="${d.nik}"></td>
+                                            <td th:text="${d.noKK}"></td>
+                                            <td th:text="${d.nama}"></td>
+                                            <td th:text="${d.alamat}"></td>
+                                            <td th:text="${d.tempatLahir}"></td>
+                                            <td th:text="${d.tanggalLahir}"></td>
+                                            <td th:text="${d.agama}"></td>
+                                            <td th:text="${d.pendidikan}"></td>
+                                            <td th:text="${d.pekerjaan}"></td>
+                                            <td th:text="${d.statusPernikahan}"></td>
+                                            <td th:text="${d.statusKeluarga}"></td>
+                                            <td th:text="${d.kewarganegaraan}"></td>
+                                            <td th:text="${d.noPaspor}"></td>
+                                            <td th:text="${d.noKITAS}"></td>
+                                            <td th:text="${d.namaAyah}"></td>
+                                            <td th:text="${d.namaIbu}"></td>
+                                            <td th:text="${d.golonganDarah}"></td>
+                                            <td th:text="${d.jeniskelamin}"></td>
                                         </tr>
                                     </tbody>
                                 </table>
