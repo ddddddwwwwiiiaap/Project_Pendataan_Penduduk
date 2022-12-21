@@ -19,7 +19,6 @@
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
-    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -346,7 +345,7 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <tbody>
+                                    <thead>
                                         <tr>
                                             <td>No</td>
                                             <td>Nama Kepala Keluarga</td>
@@ -354,15 +353,30 @@
                                             <td>Jumlah Keluarga Pindah</td>
                                             <td>Aksi</td>
                                         </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr th:each="p: ${pindah}">
-                                                <td th:text="${p.id}"></td>
-                                                <td th:text="${p.namakepalakeluarga}"></td>
-                                                <td th:text="${p.alamatsekarang}"></td>
-                                                <td th:text="${p.jumlahkeluargapindah}"></td>
-                                            </tr>
-                                        </tbody>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="p: ${tables_pindahpenduduk}">
+                                            <td th:text="${p.id}"></td>
+                                            <td th:text="${p.namakepalakeluarga}"></td>
+                                            <td th:text="${p.alamatsekarang}"></td>
+                                            <td th:text="${p.jumlahkeluargapindah}"></td>
+                                            <td>
+                                                <a href="#" class="btn btn-success btn-icon-split">
+                                                    <span class="icon text-white-50">
+                                                            <i class="fas fa-edit"></i>
+                                                        </span>
+                                                    <span class="text">Edit</span>
+                                                </a>
+                                                <a href="#" class="btn btn-danger btn-icon-split">
+                                                    <span class="icon text-white-50">
+                                                            <i class="fas fa-trash"></i>
+                                                        </span>
+                                                    <span class="text">Delete</span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
