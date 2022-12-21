@@ -349,36 +349,35 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>penyebab</th>
+                                            <th>Penyebab Kematian</th>
                                             <th>Tempat Meninggal</th>
                                             <th>Tanggal Meninggal</th>
                                             <th>Waktu Meninggal</th>
-                                            <th>NIK</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Penyakit</td>
-                                            <td>Rumah Sakit</td>
-                                            <td>2020-01-01</td>
-                                            <td>12:00:00</td>
-                                            <td>1234567890123456</td>
+                                        <tr th:each="k: ${tables_kematianpenduduk}">
+                                            <td th:text="${k.id}"></td>
+                                            <td th:text="${k.penyebabkematian}"></td>
+                                            <td th:text="${k.tempatkematian}"></td>
+                                            <td th:text="${k.tglkematian}"></td>
+                                            <td th:text="${k.waktukematian}"></td>
                                             <td>
-                                                <a href="" class="btn btn-primary btn-icon-split">
+                                                <a href="#" class="btn btn-success btn-icon-split">
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-edit"></i>
                                                     </span>
                                                     <span class="text">Edit</span>
                                                 </a>
-                                                <a href="" class="btn btn-danger btn-icon-split">
+                                                <a href="#" class="btn btn-danger btn-icon-split">
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-trash"></i>
                                                     </span>
-                                                    <span class="text">Hapus</span>
+                                                    <span class="text">Delete</span>
                                                 </a>
                                             </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
