@@ -346,40 +346,23 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama Kepala Keluarga</th>
-                                            <th>Alamat Sekarang</th>
-                                            <th>Alamat Tujuan</th>
-                                            <th>NIK</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
                                     <tbody>
-
                                         <tr>
-                                            <td>1</td>
-                                            <td>Ridho</td>
-                                            <td>Desa Sukamaju</td>
-                                            <td>Desa Sukamaju</td>
-                                            <td>123456789</td>
-                                            <td>
-                                                <a href="" class="btn btn-primary btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-edit"></i>
-                                                    </span>
-                                                    <span class="text">Edit</span>
-                                                </a>
-                                                <a href="" class="btn btn-danger btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-trash"></i>
-                                                    </span>
-                                                    <span class="text">Hapus</span>
-                                                </a>
-                                            </td>
+                                            <td>No</td>
+                                            <td>Nama Kepala Keluarga</td>
+                                            <td>Alamat Sekarang</td>
+                                            <td>Jumlah Keluarga Pindah</td>
+                                            <td>Aksi</td>
                                         </tr>
-                                    </tbody>
+                                        </thead>
+                                        <tbody>
+                                            <tr th:each="p: ${pindah}">
+                                                <td th:text="${p.id}"></td>
+                                                <td th:text="${p.namakepalakeluarga}"></td>
+                                                <td th:text="${p.alamatsekarang}"></td>
+                                                <td th:text="${p.jumlahkeluargapindah}"></td>
+                                            </tr>
+                                        </tbody>
                                 </table>
                             </div>
                         </div>

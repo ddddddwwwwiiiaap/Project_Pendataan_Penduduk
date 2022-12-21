@@ -46,4 +46,16 @@ public class HomeController {
         model.addAttribute("tables_pendataanpenduduk", pendataanPendudukService.findAll());
         return "tables_pendataanpenduduk";
     }
+
+    @GetMapping("/tables_pindahpenduduk")
+    public String tables_pindahpenduduk(Model model) {
+        model.addAttribute("tables_pindahpenduduk", pindahPendudukService.findAll());
+        return "tables_pindahpenduduk";
+    }
+
+    @GetMapping("/tables_kematianpenduduk")
+    public String tables_kematianpenduduk(Model model) {
+        model.addAttribute("tables_kematianpenduduk", kematianPendudukService.findAll());
+        return "tables_kematianpenduduk";
+    }
 }
