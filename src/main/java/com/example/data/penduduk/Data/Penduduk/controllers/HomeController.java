@@ -25,7 +25,7 @@ public class HomeController {
     @Autowired
     private KematianPendudukService kematianPendudukService;
 
-    @GetMapping
+    @GetMapping("/index.html")
     public String index(Model model) {
         model.addAttribute("searchData", new SearchData());
         model.addAttribute("pendataan", pendataanPendudukService.findAll());
@@ -41,19 +41,19 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/tables_pendataanpenduduk")
+    @GetMapping("/tables_pendataanpenduduk.html")
     public String tables_pendataanpenduduk(Model model) {
         model.addAttribute("tables_pendataanpenduduk", pendataanPendudukService.findAll());
         return "tables_pendataanpenduduk";
     }
 
-    @GetMapping("/tables_pindahpenduduk")
+    @GetMapping("/tables_pindahpenduduk.html")
     public String tables_pindahpenduduk(Model model) {
         model.addAttribute("tables_pindahpenduduk", pindahPendudukService.findAll());
         return "tables_pindahpenduduk";
     }
 
-    @GetMapping("/tables_kematianpenduduk")
+    @GetMapping("/tables_kematianpenduduk.html")
     public String tables_kematianpenduduk(Model model) {
         model.addAttribute("tables_kematianpenduduk", kematianPendudukService.findAll());
         return "tables_kematianpenduduk";
