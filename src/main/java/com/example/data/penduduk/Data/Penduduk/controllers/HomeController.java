@@ -100,6 +100,12 @@ public class HomeController {
         return "tables_pindahpenduduk";
     }
 
+    @GetMapping("/delete_tables_pindahpenduduk/{id}")
+    public String delete(@PathVariable("id") Long id){
+        pindahPendudukService.delete(id);
+        return "redirect:/tables_pindahpenduduk.html";
+    }
+
     @GetMapping("/tables_kematianpenduduk.html")
     public String tables_kematianpenduduk(Model model) {
         model.addAttribute("tables_kematianpenduduk", kematianPendudukService.findAll());
