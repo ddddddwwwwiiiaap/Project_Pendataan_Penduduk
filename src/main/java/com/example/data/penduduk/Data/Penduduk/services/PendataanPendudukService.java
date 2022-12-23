@@ -20,7 +20,6 @@ public class PendataanPendudukService {
 
     public PendataanPenduduk save(PendataanPenduduk dPendataanPenduduk){
         return pendataanPendudukRepo.save(dPendataanPenduduk);
-
     }
 
     public Iterable <PendataanPenduduk> findAll(){
@@ -29,9 +28,25 @@ public class PendataanPendudukService {
 
     public void delete(String nama){
         pendataanPendudukRepo.deleteById(nama);
-   }
+    }
 
-   public List<PendataanPenduduk> findByName(String nama){
-    return pendataanPendudukRepo.findByNamaContains(nama);
-   }
+    public List<PendataanPenduduk> findByName(String nama){
+        return pendataanPendudukRepo.findByNamaContains(nama);
+    }
+
+    public void saveData(PendataanPenduduk PendataanPenduduk){
+        pendataanPendudukRepo.save(PendataanPenduduk);
+    }
+
+    public void deleteByNik(String nik){
+        pendataanPendudukRepo.deleteById(nik);
+    }
+    
+    public void updateData(PendataanPenduduk PendataanPenduduk){
+        pendataanPendudukRepo.save(PendataanPenduduk);
+    }
+
+    public PendataanPenduduk findByNik(String nik){
+        return pendataanPendudukRepo.findByNik(nik);
+    }
 }

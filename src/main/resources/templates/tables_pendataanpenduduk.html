@@ -421,13 +421,15 @@
                                             <td th:text="${d.golonganDarah}"></td>
                                             <td th:text="${d.jeniskelamin}"></td>
                                             <td>
-                                                <a href="#" class="btn btn-success btn-icon-split">
+                                                <a href="#" class="btn btn-success btn-icon-split"
+                                                    th:href="@{'/edit_datapenduduk/'+${d.nik}}">
                                                     <span class="icon text-white-50">
-                                                        <i class="fas fa-edit"></i>
+                                                        <i class="fas fa-trash"></i>
                                                     </span>
                                                     <span class="text">Edit</span>
                                                 </a>
-                                                <a href="#" class="btn btn-danger btn-icon-split">
+                                                <a href="#" class="btn btn-danger btn-icon-split"
+                                                    th:href="@{'delete/'+${d.nik}}">
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-trash"></i>
                                                     </span>

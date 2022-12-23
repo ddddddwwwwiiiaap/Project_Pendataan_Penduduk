@@ -338,40 +338,40 @@
                         <div class="col-lg-12">
 
 
-                            <form>
+                            <form th:object="${data_penduduk}" method="post" th:action="@{/save}">
                                 <div class="form-group">
                                     <label for="nama">NIK</label>
-                                    <input type="Text" id="nik" class="form-control" placeholder="Masukkan NIK ...">
+                                    <input type="Text" id="nik" class="form-control" placeholder="Masukkan NIK ..." th:field="*{nik}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="nama">Nomer Kartu Keluarga</label>
-                                    <input type="Text" id="nokk" class="form-control" placeholder="Masukkan Nomer Kartu Keluarga ...">
+                                    <input type="Text" id="nokk" class="form-control" placeholder="Masukkan Nomer Kartu Keluarga ..." th:field="*{noKK}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="umur">Nama</label>
-                                    <input type="Text" id="nama" class="form-control" placeholder="Masukkan Nama ...">
+                                    <input type="Text" id="nama" class="form-control" placeholder="Masukkan Nama ..." th:field="*{nama}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
-                                    <textarea class="form-control" id="alamat" rows="3" placeholder="Masukkan Alamat ..."></textarea>
+                                    <textarea class="form-control" id="alamat" rows="3" placeholder="Masukkan Alamat ..." th:field="*{alamat}"></textarea>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="umur">Tempat Lahir</label>
-                                    <input type="Text" id="tempatlahir" class="form-control" placeholder="Masukkan Tempat Lahir ...">
+                                    <input type="Text" id="tempatlahir" class="form-control" placeholder="Masukkan Tempat Lahir ..." th:field="*{tempatLahir}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="umur">Tanggal Lahir</label>
-                                    <input type="Date" id="tempatlahir" class="form-control">
+                                    <input type="Date" id="tempatlahir" class="form-control"  th:field="*{tanggalLahir}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="umur">Agama</label>
-                                    <select id="jeniskelamin" class="form-control">
+                                    <select id="jeniskelamin" class="form-control" th:field="*{agama}">
                                         <option value="">- Pilih Agama</option>
                                         <option value="">Islam</option>
                                         <option value="">Kristen Protestan</option>
@@ -384,7 +384,7 @@
 
                                 <div class="form-group">
                                     <label for="umur">Jenis Kelamin</label>
-                                    <select id="jeniskelamin" class="form-control">
+                                    <select id="jeniskelamin" class="form-control" th:field="*{jeniskelamin}">
                                         <option value="">- Pilih Jenis Kelamin</option>
                                         <option value="">Laki-Laki</option>
                                         <option value="">Perempuan</option>
@@ -393,7 +393,7 @@
 
                                 <div class="form-group">
                                     <label for="umur">Pendidikan</label>
-                                    <select id="pendidikan" class="form-control">
+                                    <select id="pendidikan" class="form-control" th:field="*{pendidikan}">
                                         <option value="">- Pilih Pendidikan</option>
                                         <option value="">SD</option>
                                         <option value="">SMP</option>
@@ -407,12 +407,12 @@
 
                                     <div class="form-group">
                                         <label for="umur">Pekerjaan</label>
-                                        <input type="Text" id="pekerjaan" class="form-control" placeholder="Masukkan Pekerjaan ...">
+                                        <input type="Text" id="pekerjaan" class="form-control" placeholder="Masukkan Pekerjaan ..." th:field="*{pekerjaan}">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="umur">Status Perkawinan</label>
-                                        <select id="statusperkawinan" class="form-control">
+                                        <label for="umur">Status Pernikahan</label>
+                                        <select id="statuspernikahan" class="form-control" th:field="*{statusPernikahan}">
                                         <option value="">- Pilih Status Perkawinan</option>
                                         <option value="">Belum Kawin</option>
                                         <option value=""> Kawin</option>
@@ -423,7 +423,7 @@
 
                                     <div class="form-group">
                                         <label for="umur">Status Keluarga</label>
-                                        <select id="statuskeluarga" class="form-control">
+                                        <select id="statuskeluarga" class="form-control" th:field="*{statusKeluarga}">
                                         <option value="">- Pilih Status Keluarga</option>
                                         <option value="">Suami</option>
                                         <option value="">Istri</option>
@@ -434,7 +434,7 @@
 
                                     <div class="form-group">
                                         <label for="umur">Kewarganegaraan</label>
-                                        <select id="kewarganegaraan" class="form-control">
+                                        <select id="kewarganegaraan" class="form-control" th:field="*{kewarganegaraan}">
                                         <option value="">- Pilih Kewarganegaraan</option>
                                         <option value="">WNI</option>
                                         <option value="">WNA</option>
@@ -443,27 +443,27 @@
 
                                     <div class="form-group">
                                         <label for="umur">Nomer Pospor</label>
-                                        <input type="Text" id="nopospor" class="form-control" placeholder="Masukkan Nomer Pospor ...">
+                                        <input type="Text" id="nopospor" class="form-control" placeholder="Masukkan Nomer Pospor ..." th:field="*{noPaspor}">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="umur">Nomer Kitas</label>
-                                        <input type="Text" id="nokitas" class="form-control" placeholder="Masukkan Nomer KItas ...">
+                                        <input type="Text" id="nokitas" class="form-control" placeholder="Masukkan Nomer KItas ..." th:field="*{noKITAS}">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="umur">Nama Ayah</label>
-                                        <input type="Text" id="namaayah" class="form-control" placeholder="Masukkan Nama Ayah ...">
+                                        <input type="Text" id="namaayah" class="form-control" placeholder="Masukkan Nama Ayah ..." th:field="*{namaAyah}">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="umur">Nama Ibu</label>
-                                        <input type="Text" id="namaibu" class="form-control" placeholder="Masukkan Nama Ibu ...">
+                                        <input type="Text" id="namaibu" class="form-control" placeholder="Masukkan Nama Ibu ..." th:field="*{namaIbu}">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="golongan_darah">Golongan Darah</label>
-                                        <select id="golongandarah" class="form-control">
+                                        <select id="golongandarah" class="form-control" th:field="*{golonganDarah}">
                                         <option value="">- Pilih Golongan Darah</option>
                                         <option value="">A</option>
                                         <option value="">B</option>

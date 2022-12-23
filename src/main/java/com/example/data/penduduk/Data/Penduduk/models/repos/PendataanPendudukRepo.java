@@ -12,4 +12,6 @@ public interface PendataanPendudukRepo extends CrudRepository<PendataanPenduduk,
 
     PendataanPenduduk findByNikContains(String nik);
 
+    PendataanPenduduk findByNik(String nik);
+
 }
