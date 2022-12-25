@@ -26,8 +26,8 @@ public class PendataanPendudukService {
         return pendataanPendudukRepo.findAll();
     }
 
-    public void delete(String nama){
-        pendataanPendudukRepo.deleteById(nama);
+    public void delete(Long id){
+        pendataanPendudukRepo.deleteById(id);
     }
 
     public List<PendataanPenduduk> findByName(String nama){
@@ -38,8 +38,8 @@ public class PendataanPendudukService {
         pendataanPendudukRepo.save(PendataanPenduduk);
     }
 
-    public void deleteByNik(String nik){
-        pendataanPendudukRepo.deleteById(nik);
+    public void deleteById(Long id){
+        pendataanPendudukRepo.deleteById(id);
     }
     
     public void updateData(PendataanPenduduk PendataanPenduduk){
@@ -48,5 +48,9 @@ public class PendataanPendudukService {
 
     public PendataanPenduduk findByNik(String nik){
         return pendataanPendudukRepo.findByNik(nik);
+    }
+
+    public Optional<PendataanPenduduk> findById(Long id){
+        return pendataanPendudukRepo.findById(id);
     }
 }
