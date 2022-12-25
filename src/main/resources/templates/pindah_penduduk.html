@@ -338,44 +338,21 @@
                         <div class="col-lg-12">
 
 
-                            <form>
-                                <div class="form-group">
-                                    <label for="nama">Nomer Pindah</label>
-                                    <input type="number" id="nokk" class="form-control" placeholder="Masukkan Nomer Kartu Keluarga ...">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="nama">NIK</label>
-                                    <input type="text" id="nokk" class="form-control" placeholder="Masukkan Nomer NIK ...">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="umur">Nomer Kartu Keluarga</label>
-                                    <input type="Text" id="nama" class="form-control" placeholder="Masukkan Nomer Kartu Keluarga ...">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="alamat">Nama</label>
-                                    <input type="Text" id="nama" class="form-control" placeholder="Masukkan Nama ...">
-                                </div>
-
+                            <form th:object="${pindah_penduduk}" method="POST" th:action="@{/savepindahpenduduk}">
                                 <div class="form-group">
                                     <label for="alamat">Nama Kepala Keluarga</label>
-                                    <input type="Text" id="nama" class="form-control" placeholder="Masukkan Nama Kepala Keluarga ...">
-
+                                    <input type="text" id="nama" class="form-control" placeholder="Masukkan Nama Kepala Keluarga ..." th:field="*{namakepalakeluarga}">
                                 </div>
                                 <div class="form-group">
                                     <label for="alamat">Alamat Sekarang</label>
-                                    <input type="Text" id="nama" class="form-control" placeholder="Masukkan Alamat Sekarang ..."> </div>
-
+                                    <input type="text" id="nama" class="form-control" placeholder="Masukkan Alamat Sekarang ..." th:field="*{alamatsekarang}">
+                                </div>
                                 <div class="form-group">
-                                    <label for="alamat">Alamat Tujuan</label>
-                                    <input type="Text" id="nama" class="form-control" placeholder="Masukkan Alamat Tujuan ..."> </div>
-
+                                    <label for="alamat">Jumlah Keluarga Pindah</label>
+                                    <input type="text" id="nama" class="form-control" placeholder="Masukkan Alamat Tujuan ..." th:field="*{jumlahkeluargapindah}">
+                                </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
-
-
                         </div>
 
                     </div>
