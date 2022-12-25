@@ -82,7 +82,7 @@ public class HomeController {
     @PostMapping("/update")
     public String update(PendataanPenduduk pendataanPenduduk, Model model){
         pendataanPendudukService.updateData(pendataanPenduduk);
-        return "tables_pendataanpenduduk";
+        return "redirect:/tables_pendataanpenduduk.html";
     }
 
 
