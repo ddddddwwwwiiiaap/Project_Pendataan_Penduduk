@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.data.penduduk.Data.Penduduk.dto.SearchData;
 import com.example.data.penduduk.Data.Penduduk.models.entities.PendataanPenduduk;
+import com.example.data.penduduk.Data.Penduduk.models.entities.PindahPenduduk;
 import com.example.data.penduduk.Data.Penduduk.services.KematianPendudukService;
 import com.example.data.penduduk.Data.Penduduk.services.PendataanPendudukService;
 import com.example.data.penduduk.Data.Penduduk.services.PindahPendudukService;
@@ -98,6 +99,61 @@ public class HomeController {
         model.addAttribute("tables_pindahpenduduk", pindahPendudukService.findAll());
         return "tables_pindahpenduduk";
     }
+
+    @GetMapping("/pindah_penduduk.html")
+    public String inputpindahpenduduk(Model model) {
+        model.addAttribute("pindah_penduduk", new PindahPenduduk());
+        return "pindah_penduduk";
+    }
+
+    @PostMapping("/savepindahpenduduk")
+    public String savepindahpenduduk(PindahPenduduk pindahPenduduk) {
+        pindahPendudukService.saveData(pindahPenduduk);
+        return "redirect:/tables_pindahpenduduk.html";
+    }
+
+    @GetMapping("/deletepindahpenduduk/{id}")
+    public String deletepindahpenduduk(@PathVariable("id") Long id){
+        pindahPendudukService.delete(id);
+        return "redirect:/tables_pindahpenduduk.html";
+    }
+
+    @GetMapping("/edit_pindahpenduduk/{id}")
+    public String editpindahpenduduk(@PathVariable("id") Long id, Model model){
+        model.addAttribute("edit_pindahpenduduk", pindahPendudukService.findById(id));
+        return "edit_datapenduduk";
+    }
+
+    @PostMapping("/updatepindahpenduduk")
+    public String updatepindahpenduduk(PindahPenduduk pindahPenduduk, Model model){
+        pindahPendudukService.updateData(pindahPenduduk);
+        return "tables_pendataanpenduduk";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @GetMapping("/tables_kematianpenduduk.html")
     public String tables_kematianpenduduk(Model model) {
