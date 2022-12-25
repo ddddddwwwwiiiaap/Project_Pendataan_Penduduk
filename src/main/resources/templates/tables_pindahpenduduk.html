@@ -361,13 +361,7 @@
                                             <td th:text="${p.alamatsekarang}"></td>
                                             <td th:text="${p.jumlahkeluargapindah}"></td>
                                             <td>
-                                                <a href="#" class="btn btn-success btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                            <i class="fas fa-edit"></i>
-                                                        </span>
-                                                    <span class="text">Edit</span>
-                                                </a>
-                                                <a href="#" class="btn btn-danger btn-icon-split" th:href="@{'delete_tables_pindahpenduduk/'+${p.id}}">
+                                                <a href="#" class="btn btn-danger btn-icon-split" th:href="@{'deletepindahpenduduk/'+${p.id}}">
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-trash"></i>
                                                     </span>
