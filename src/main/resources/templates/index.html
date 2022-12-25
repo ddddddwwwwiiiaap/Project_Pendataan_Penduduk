@@ -13,7 +13,9 @@
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -56,7 +58,8 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Data Master</span>
                 </a>
@@ -71,11 +74,13 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Data Penduduk</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Data Penduduk:</h6>
                         <a class="collapse-item" href="data_penduduk.html">Pendataan Penduduk</a>
@@ -95,7 +100,8 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                    aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Laporan</span>
                 </a>
@@ -156,9 +162,11 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
@@ -172,14 +180,19 @@
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search" th:object="${searchData}" method="post" th:action="@{/search}">
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search" th:object="${searchData}"
+                                    method="post" th:action="@{/search}">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" th:field="*{searchKey}">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2" th:field="*{searchKey}">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -192,13 +205,15 @@
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
                                 <span class="badge badge-danger badge-counter">3+</span>
                             </a>
                             <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Alerts Center
                                 </h6>
@@ -241,13 +256,15 @@
 
                         <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
                                 <!-- Counter - Messages -->
                                 <span class="badge badge-danger badge-counter">7</span>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
                                     Message Center
                                 </h6>
@@ -257,7 +274,8 @@
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
-                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
+                                        <div class="text-truncate">Hi there! I am wondering if you can help me with a
+                                            problem I've been having.</div>
                                         <div class="small text-gray-500">Emily Fowler · 58m</div>
                                     </div>
                                 </a>
@@ -267,7 +285,8 @@
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
-                                        <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
+                                        <div class="text-truncate">I have the photos that you ordered last month, how
+                                            would you like them sent to you?</div>
                                         <div class="small text-gray-500">Jae Chun · 1d</div>
                                     </div>
                                 </a>
@@ -277,17 +296,20 @@
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
-                                        <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
+                                        <div class="text-truncate">Last month's report looks great, I am very happy with
+                                            the progress so far, keep up the good work!</div>
                                         <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="...">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                            alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div>
-                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
+                                        <div class="text-truncate">Am I a good boy? The reason I ask is because someone
+                                            told me that people say this to all dogs, even if they aren't good...</div>
                                         <div class="small text-gray-500">Chicken the Dog · 2w</div>
                                     </div>
                                 </a>
@@ -299,12 +321,14 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
                                 </a>
@@ -331,7 +355,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                        <h1 class="h3 mb-0 text-gray-800"><b>Dashboard</b></h1>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
@@ -340,7 +364,7 @@
                     <div class="row">
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -358,7 +382,7 @@
                         </div>
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -376,7 +400,7 @@
                         </div>
 
                         <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-4 col-md-6 mb-4">
                             <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -402,13 +426,16 @@
                         <div class="col-xl-8 col-lg-7">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
                                     <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Dropdown Header:</div>
                                             <a class="dropdown-item" href="#">Action</a>
                                             <a class="dropdown-item" href="#">Another action</a>
@@ -430,13 +457,16 @@
                         <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
                                     <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
                                             <div class="dropdown-header">Dropdown Header:</div>
                                             <a class="dropdown-item" href="#">Action</a>
                                             <a class="dropdown-item" href="#">Another action</a>
@@ -466,172 +496,189 @@
                         </div>
                     </div>
 
-                    <!-- Content Row -->
-                    <div class="row">
-                        <!-- Approach -->
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary"><b>Pendataan Penduduk</b></h6>
-                            </div>
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary"><b>Pendataan Penduduk</b></h6>
+                        </div>
 
-                            <div class="card-body">
-                                <!--Tabel penduduk-->
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <form  method="post" th:object="${searchData}" th:action="@{/search}">
-                                            <div class="input-group mb-3">
-                                                <input type="text" class="form-control" placeholder="Cari Data Penduduk" name="searchKey" th:field="*{searchKey}">
-                                                <div class="input-group-append">
-                                                    <button class="btn btn-primary" type="submit">Cari</button>
-                                                </div>
+                        <div class="card-body">
+                            <!--Tabel penduduk-->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form method="post" th:object="${searchData}" th:action="@{/search}">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" placeholder="Cari Data Penduduk"
+                                                name="searchKey" th:field="*{searchKey}">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="submit">Cari</button>
                                             </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>NIK</th>
-                                                <th>Nomer Kartu Keluarga</th>
-                                                <th>Nama</th>
-                                                <th>Alamat</th>
-                                                <th>Tempat Lahir</th>
-                                                <th>Tanggal Lahir</th>
-                                                <th>Agama</th>
-                                                <th>Pendidikan</th>
-                                                <th>Pekerjaan</th>
-                                                <th>Status Pernikahan</th>
-                                                <th>Status Keluarga</th>
-                                                <th>Kewarganegaraan</th>
-                                                <th>Nomer Paspor</th>
-                                                <th>Nomer KITAS</th>
-                                                <th>Nama Ayah</th>
-                                                <th>Nama Ibu</th>
-                                                <th>Golongan Darah</th>
-                                                <th>Jenis Kelamin</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr th:each="d: ${pendataan}">
-                                                <td th:text="${d.nik}"></td>
-                                                <td th:text="${d.noKK}"></td>
-                                                <td th:text="${d.nama}"></td>
-                                                <td th:text="${d.alamat}"></td>
-                                                <td th:text="${d.tempatLahir}"></td>
-                                                <td th:text="${d.tanggalLahir}"></td>
-                                                <td th:text="${d.agama}"></td>
-                                                <td th:text="${d.pendidikan}"></td>
-                                                <td th:text="${d.pekerjaan}"></td>
-                                                <td th:text="${d.statusPernikahan}"></td>
-                                                <td th:text="${d.statusKeluarga}"></td>
-                                                <td th:text="${d.kewarganegaraan}"></td>
-                                                <td th:text="${d.noPaspor}"></td>
-                                                <td th:text="${d.noKITAS}"></td>
-                                                <td th:text="${d.namaAyah}"></td>
-                                                <td th:text="${d.namaIbu}"></td>
-                                                <td th:text="${d.golonganDarah}"></td>
-                                                <td th:text="${d.jeniskelamin}"></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
-                        </div>
-
-                        <!--Tabel penduduk-->
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary"><b>Pindah Penduduk</b></h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <td>No</td>
-                                                <td>Nama Kepala Keluarga</td>
-                                                <td>Alamat Sekarang</td>
-                                                <td>Jumlah Keluarga Pindah</td>
-                                                <td>Aksi</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr th:each="p: ${pindah}">
-                                                <td th:text="${p.id}"></td>
-                                                <td th:text="${p.namakepalakeluarga}"></td>
-                                                <td th:text="${p.alamatsekarang}"></td>
-                                                <td th:text="${p.jumlahkeluargapindah}"></td>
-                                                <td>
-                                                    <a href="/kematian/detail" class="btn btn-primary btn-icon-split">
-                                                        <span class="icon text-white-50">
-                                                            <i class="fas fa-info"></i>
-                                                        </span>
-                                                        <span class="text">Detail</span>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Tabel penduduk-->
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary"><b>Kematian Penduduk</b></h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <td>No</td>
-                                                <td>Penyebab Kematian</td>
-                                                <td>Tempat Kematian</td>
-                                                <td>Tanggal Kematian</td>
-                                                <td>Waktu Kematian</td>
-                                                <td>Aksi</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr th:each="k: ${kematian}">
-                                                <td th:text="${k.id}"></td>
-                                                <td th:text="${k.penyebabkematian}"></td>
-                                                <td th:text="${k.tempatkematian}"></td>
-                                                <td th:text="${k.tglkematian}"></td>
-                                                <td th:text="${k.waktukematian}"></td>
-                                                <td>
-                                                    <a href="/kematian/detail" class="btn btn-primary btn-icon-split">
-                                                        <span class="icon text-white-50">
-                                                            <i class="fas fa-info"></i>
-                                                        </span>
-                                                        <span class="text">Detail</span>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>NIK</th>
+                                            <th>Nomer Kartu Keluarga</th>
+                                            <th>Nama</th>
+                                            <th>Alamat</th>
+                                            <th>Tempat Lahir</th>
+                                            <th>Tanggal Lahir</th>
+                                            <th>Agama</th>
+                                            <th>Pendidikan</th>
+                                            <th>Pekerjaan</th>
+                                            <th>Status Pernikahan</th>
+                                            <th>Status Keluarga</th>
+                                            <th>Kewarganegaraan</th>
+                                            <th>Nomer Paspor</th>
+                                            <th>Nomer KITAS</th>
+                                            <th>Nama Ayah</th>
+                                            <th>Nama Ibu</th>
+                                            <th>Golongan Darah</th>
+                                            <th>Jenis Kelamin</th>
+                                            <th>Aksi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="d: ${pendataan}">
+                                            <td th:text="${d.id}"></td>
+                                            <td th:text="${d.nik}"></td>
+                                            <td th:text="${d.nokk}"></td>
+                                            <td th:text="${d.nama}"></td>
+                                            <td th:text="${d.alamat}"></td>
+                                            <td th:text="${d.tempatlahir}"></td>
+                                            <td th:text="${d.tanggallahir}"></td>
+                                            <td th:text="${d.agama}"></td>
+                                            <td th:text="${d.pendidikan}"></td>
+                                            <td th:text="${d.pekerjaan}"></td>
+                                            <td th:text="${d.statuspernikahan}"></td>
+                                            <td th:text="${d.statuskeluarga}"></td>
+                                            <td th:text="${d.kewarganegaraan}"></td>
+                                            <td th:text="${d.nopaspor}"></td>
+                                            <td th:text="${d.nokitas}"></td>
+                                            <td th:text="${d.namaayah}"></td>
+                                            <td th:text="${d.namaibu}"></td>
+                                            <td th:text="${d.golongandarah}"></td>
+                                            <td th:text="${d.jeniskelamin}"></td>
+                                            <td>
+                                                <a href="#" class="btn btn-success btn-icon-split"
+                                                    th:href="@{'/edit_datapenduduk/'+${d.id}}">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-trash"></i>
+                                                    </span>
+                                                    <span class="text">Edit</span>
+                                                </a>
+                                                <a href="#" class="btn btn-danger btn-icon-split"
+                                                    th:href="@{'delete/'+${d.id}}">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-trash"></i>
+                                                    </span>
+                                                    <span class="text">Delete</span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
 
+                    <!--Tabel penduduk-->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary"><b>Pindah Penduduk</b></h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <td>No</td>
+                                            <td>Nama Kepala Keluarga</td>
+                                            <td>Alamat Sekarang</td>
+                                            <td>Jumlah Keluarga Pindah</td>
+                                            <td>Aksi</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="p: ${pindah}">
+                                            <td th:text="${p.id}"></td>
+                                            <td th:text="${p.namakepalakeluarga}"></td>
+                                            <td th:text="${p.alamatsekarang}"></td>
+                                            <td th:text="${p.jumlahkeluargapindah}"></td>
+                                            <td>
+                                                <a href="/kematian/detail" class="btn btn-primary btn-icon-split">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-info"></i>
+                                                    </span>
+                                                    <span class="text">Detail</span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Tabel penduduk-->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary"><b>Kematian Penduduk</b></h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <td>No</td>
+                                            <td>Penyebab Kematian</td>
+                                            <td>Tempat Kematian</td>
+                                            <td>Tanggal Kematian</td>
+                                            <td>Waktu Kematian</td>
+                                            <td>Aksi</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr th:each="k: ${kematian}">
+                                            <td th:text="${k.id}"></td>
+                                            <td th:text="${k.penyebabkematian}"></td>
+                                            <td th:text="${k.tempatkematian}"></td>
+                                            <td th:text="${k.tglkematian}"></td>
+                                            <td th:text="${k.waktukematian}"></td>
+                                            <td>
+                                                <a href="/kematian/detail" class="btn btn-primary btn-icon-split">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-info"></i>
+                                                    </span>
+                                                    <span class="text">Detail</span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- /.container-fluid -->
 
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-
-            </footer>
-            <!-- End of Footer -->
+            <!-- /.container-fluid -->
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
@@ -642,7 +689,8 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
