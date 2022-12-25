@@ -5,6 +5,8 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
@@ -15,17 +17,19 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @Table(name = "tbl_pendataanPenduduk")
 public class PendataanPenduduk implements Serializable {
 
-    private static final Long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name="nik",columnDefinition="char(16)", length = 16)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(columnDefinition="char(16)", length = 16)
     private String nik;
 
-    @Column(name="nokk",columnDefinition="char(16)", length = 16)
-    private String noKK;
-    
+    @Column(columnDefinition="char(16)", length = 16)
+    private String nokk;
 
-    @NotEmpty(message = "nama harus di isi")
+    //@NotEmpty(message = "nama harus di isi")
     @Column(length = 100)
     private String nama;
 
@@ -33,72 +37,81 @@ public class PendataanPenduduk implements Serializable {
     private String alamat;
 
     @Column(length = 100)
-    private String tempatLahir;
+    private String tempatlahir;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private Date tanggalLahir;
+    private Date tanggallahir;
 
     @Column(length = 9)
     private String agama;
 
-    @Column(length = 50)
+    @Column(length = 3)
     private String pendidikan;
 
     @Column(length = 50)
     private String pekerjaan;
 
     @Column(length = 11)
-    private String statusPernikahan;
+    private String statuspernikahan;
 
-    @Column(length = 15)
-    private String statusKeluarga;
+    @Column(length = 11)
+    private String statuskeluarga;
 
     @Column(length = 3)
     private String kewarganegaraan;
 
     @Column(length = 17, unique = true)
-    private String noPaspor;
+    private String nopaspor;
 
     @Column(length = 16, unique = true)
-    private String noKITAS;
+    private String nokitas;
 
     @Column(length = 100)
-    private String namaAyah;
+    private String namaayah;
 
     @Column(length = 100)
-    private String namaIbu;
+    private String namaibu;
 
     @Column(length = 2)
-    private String golonganDarah;
+    private String golongandarah;
 
-    @Column(length = 6)
+    @Column(length = 9)
     private String jeniskelamin;
 
     public PendataanPenduduk() {
     }
 
-    public PendataanPenduduk(String nik, String noKK, @NotEmpty(message = "nama harus di isi") String nama,
-            String alamat, String tempatLahir, Date tanggalLahir, String agama, String pendidikan, String pekerjaan,
-            String statusPernikahan, String statusKeluarga, String kewarganegaraan, String noPaspor, String noKITAS,
-            String namaAyah, String namaIbu, String golonganDarah, String jeniskelamin) {
+    public PendataanPenduduk(Long id, String nik, String nokk, String nama, String alamat, String tempatlahir,
+            Date tanggallahir, String agama, String pendidikan, String pekerjaan, String statuspernikahan,
+            String statuskeluarga, String kewarganegaraan, String nopaspor, String nokitas, String namaayah,
+            String namaibu, String golongandarah, String jeniskelamin) {
+        this.id = id;
         this.nik = nik;
-        this.noKK = noKK;
+        this.nokk = nokk;
         this.nama = nama;
         this.alamat = alamat;
-        this.tempatLahir = tempatLahir;
-        this.tanggalLahir = tanggalLahir;
+        this.tempatlahir = tempatlahir;
+        this.tanggallahir = tanggallahir;
         this.agama = agama;
         this.pendidikan = pendidikan;
         this.pekerjaan = pekerjaan;
-        this.statusPernikahan = statusPernikahan;
-        this.statusKeluarga = statusKeluarga;
+        this.statuspernikahan = statuspernikahan;
+        this.statuskeluarga = statuskeluarga;
         this.kewarganegaraan = kewarganegaraan;
-        this.noPaspor = noPaspor;
-        this.noKITAS = noKITAS;
-        this.namaAyah = namaAyah;
-        this.namaIbu = namaIbu;
-        this.golonganDarah = golonganDarah;
+        this.nopaspor = nopaspor;
+        this.nokitas = nokitas;
+        this.namaayah = namaayah;
+        this.namaibu = namaibu;
+        this.golongandarah = golongandarah;
         this.jeniskelamin = jeniskelamin;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNik() {
@@ -109,12 +122,12 @@ public class PendataanPenduduk implements Serializable {
         this.nik = nik;
     }
 
-    public String getNoKK() {
-        return noKK;
+    public String getNokk() {
+        return nokk;
     }
 
-    public void setNoKK(String noKK) {
-        this.noKK = noKK;
+    public void setNokk(String nokk) {
+        this.nokk = nokk;
     }
 
     public String getNama() {
@@ -133,20 +146,20 @@ public class PendataanPenduduk implements Serializable {
         this.alamat = alamat;
     }
 
-    public String getTempatLahir() {
-        return tempatLahir;
+    public String getTempatlahir() {
+        return tempatlahir;
     }
 
-    public void setTempatLahir(String tempatLahir) {
-        this.tempatLahir = tempatLahir;
+    public void setTempatlahir(String tempatlahir) {
+        this.tempatlahir = tempatlahir;
     }
 
-    public Date getTanggalLahir() {
-        return tanggalLahir;
+    public Date getTanggallahir() {
+        return tanggallahir;
     }
 
-    public void setTanggalLahir(Date tanggalLahir) {
-        this.tanggalLahir = tanggalLahir;
+    public void setTanggallahir(Date tanggallahir) {
+        this.tanggallahir = tanggallahir;
     }
 
     public String getAgama() {
@@ -173,20 +186,20 @@ public class PendataanPenduduk implements Serializable {
         this.pekerjaan = pekerjaan;
     }
 
-    public String getStatusPernikahan() {
-        return statusPernikahan;
+    public String getStatuspernikahan() {
+        return statuspernikahan;
     }
 
-    public void setStatusPernikahan(String statusPernikahan) {
-        this.statusPernikahan = statusPernikahan;
+    public void setStatuspernikahan(String statuspernikahan) {
+        this.statuspernikahan = statuspernikahan;
     }
 
-    public String getStatusKeluarga() {
-        return statusKeluarga;
+    public String getStatuskeluarga() {
+        return statuskeluarga;
     }
 
-    public void setStatusKeluarga(String statusKeluarga) {
-        this.statusKeluarga = statusKeluarga;
+    public void setStatuskeluarga(String statuskeluarga) {
+        this.statuskeluarga = statuskeluarga;
     }
 
     public String getKewarganegaraan() {
@@ -197,44 +210,44 @@ public class PendataanPenduduk implements Serializable {
         this.kewarganegaraan = kewarganegaraan;
     }
 
-    public String getNoPaspor() {
-        return noPaspor;
+    public String getNopaspor() {
+        return nopaspor;
     }
 
-    public void setNoPaspor(String noPaspor) {
-        this.noPaspor = noPaspor;
+    public void setNopaspor(String nopaspor) {
+        this.nopaspor = nopaspor;
     }
 
-    public String getNoKITAS() {
-        return noKITAS;
+    public String getNokitas() {
+        return nokitas;
     }
 
-    public void setNoKITAS(String noKITAS) {
-        this.noKITAS = noKITAS;
+    public void setNokitas(String nokitas) {
+        this.nokitas = nokitas;
     }
 
-    public String getNamaAyah() {
-        return namaAyah;
+    public String getNamaayah() {
+        return namaayah;
     }
 
-    public void setNamaAyah(String namaAyah) {
-        this.namaAyah = namaAyah;
+    public void setNamaayah(String namaayah) {
+        this.namaayah = namaayah;
     }
 
-    public String getNamaIbu() {
-        return namaIbu;
+    public String getNamaibu() {
+        return namaibu;
     }
 
-    public void setNamaIbu(String namaIbu) {
-        this.namaIbu = namaIbu;
+    public void setNamaibu(String namaibu) {
+        this.namaibu = namaibu;
     }
 
-    public String getGolonganDarah() {
-        return golonganDarah;
+    public String getGolongandarah() {
+        return golongandarah;
     }
 
-    public void setGolonganDarah(String golonganDarah) {
-        this.golonganDarah = golonganDarah;
+    public void setGolongandarah(String golongandarah) {
+        this.golongandarah = golongandarah;
     }
 
     public String getJeniskelamin() {
@@ -245,4 +258,5 @@ public class PendataanPenduduk implements Serializable {
         this.jeniskelamin = jeniskelamin;
     }
 
+    
 }
