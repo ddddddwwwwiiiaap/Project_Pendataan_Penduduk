@@ -60,23 +60,22 @@ public class HomeController {
         return "data_penduduk";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/savependataanpenduduk")
     public String savependataanpenduduk(PendataanPenduduk pendataanPenduduk) {
-        //System.out.println(pendataanPenduduk.getNama());
-        pendataanPendudukService.save(pendataanPenduduk);
-        return "redirect:/";
-    }
-
-    @GetMapping("/delete/{nik}")
-    public String delete(@PathVariable("nik") String nik){
-        pendataanPendudukService.deleteByNik(nik);
+        pendataanPendudukService.saveData(pendataanPenduduk);
         return "redirect:/tables_pendataanpenduduk.html";
     }
 
-    @GetMapping("/edit_datapenduduk/{nik}")
-    public String edit(@PathVariable("nik") String nik, Model model){
-        model.addAttribute("data_penduduk", pendataanPendudukService.findByNik(nik));
-        return "edit_datapenduduk.html";
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") Long id){
+        pendataanPendudukService.deleteById(id);
+        return "redirect:/tables_pendataanpenduduk.html";
+    }
+
+    @GetMapping("/edit_datapenduduk/{id}")
+    public String edit(@PathVariable("id") Long id, Model model){
+        model.addAttribute("data_penduduk", pendataanPendudukService.findById(id));
+        return "edit_datapenduduk";
     }
 
     @PostMapping("/update")
@@ -98,12 +97,6 @@ public class HomeController {
     public String tables_pindahpenduduk(Model model) {
         model.addAttribute("tables_pindahpenduduk", pindahPendudukService.findAll());
         return "tables_pindahpenduduk";
-    }
-
-    @GetMapping("/delete_tables_pindahpenduduk/{id}")
-    public String delete(@PathVariable("id") Long id){
-        pindahPendudukService.delete(id);
-        return "redirect:/tables_pindahpenduduk.html";
     }
 
     @GetMapping("/tables_kematianpenduduk.html")
