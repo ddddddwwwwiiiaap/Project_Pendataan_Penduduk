@@ -38,11 +38,23 @@ public class PindahPendudukService {
         return pindahRepo.findAll();
     }
 
+    public List<PindahPenduduk> findByName(String namakepalakeluarga) {
+        return pindahRepo.findByNamakepalakeluargaContains(namakepalakeluarga);
+    }
+
     public void delete(Long id) {
         pindahRepo.deleteById(id);
     }
 
-    public List<PindahPenduduk> findByName(String namakepalakeluarga) {
-        return pindahRepo.findByNamakepalakeluargaContains(namakepalakeluarga);
+    public void saveData(PindahPenduduk pindahPenduduk){
+        pindahRepo.save(pindahPenduduk);
+    }
+    
+    public void updateData(PindahPenduduk pindahPenduduk){
+        pindahRepo.save(pindahPenduduk);
+    }
+
+    public Optional<PindahPenduduk> findById(Long id){
+        return pindahRepo.findById(id);
     }
 }
