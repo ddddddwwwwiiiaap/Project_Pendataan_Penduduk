@@ -564,11 +564,19 @@
                                             <td th:text="${d.golongandarah}"></td>
                                             <td th:text="${d.jeniskelamin}"></td>
                                             <td>
-                                                <a href="/kematian/detail" class="btn btn-primary btn-icon-split">
+                                                <a href="#" class="btn btn-success btn-icon-split"
+                                                    th:href="@{'/edit_datapenduduk/'+${d.id}}">
                                                     <span class="icon text-white-50">
-                                                        <i class="fas fa-info"></i>
+                                                        <i class="fas fa-trash"></i>
                                                     </span>
-                                                    <span class="text">Detail</span>
+                                                    <span class="text">Edit</span>
+                                                </a>
+                                                <a href="#" class="btn btn-danger btn-icon-split"
+                                                    th:href="@{'delete/'+${d.id}}">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-trash"></i>
+                                                    </span>
+                                                    <span class="text">Delete</span>
                                                 </a>
                                             </td>
                                         </tr>
