@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.data.penduduk.Data.Penduduk.dto.SearchData;
+import com.example.data.penduduk.Data.Penduduk.models.entities.KematianPenduduk;
 import com.example.data.penduduk.Data.Penduduk.models.entities.PendataanPenduduk;
 import com.example.data.penduduk.Data.Penduduk.models.entities.PindahPenduduk;
 import com.example.data.penduduk.Data.Penduduk.services.KematianPendudukService;
@@ -158,6 +159,36 @@ public class HomeController {
     @GetMapping("/tables_kematianpenduduk.html")
     public String tables_kematianpenduduk(Model model) {
         model.addAttribute("tables_kematianpenduduk", kematianPendudukService.findAll());
+        return "tables_kematianpenduduk";
+    }
+
+    @GetMapping("/kematian_penduduk.html")
+    public String inputkematianpenduduk(Model model) {
+        model.addAttribute("kematian_penduduk", new KematianPenduduk());
+        return "kematian_penduduk";
+    }
+
+    @PostMapping("/savekematianpenduduk")
+    public String savekematianpenduduk(KematianPenduduk kematianPenduduk) {
+        kematianPendudukService.saveData(kematianPenduduk);
+        return "redirect:/tables_kematianpenduduk.html";
+    }
+
+    @GetMapping("/deletekematianpenduduk/{id}")
+    public String deletekematianpenduduk(@PathVariable("id") Long id){
+        kematianPendudukService.delete(id);
+        return "redirect:/tables_kematianpenduduk.html";
+    }
+
+    @GetMapping("/edit_kematianpenduduk/{id}")
+    public String editkematianpenduduk(@PathVariable("id") Long id, Model model){
+        model.addAttribute("edit_kematianpenduduk", kematianPendudukService.findById(id));
+        return "edit_kematianpenduduk";
+    }
+
+    @PostMapping("/updatekematianpenduduk")
+    public String updatekematianpenduduk(KematianPenduduk kematianPenduduk, Model model){
+        kematianPendudukService.updateData(kematianPenduduk);
         return "tables_kematianpenduduk";
     }
 }
