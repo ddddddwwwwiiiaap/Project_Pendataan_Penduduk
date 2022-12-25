@@ -46,9 +46,9 @@ public class PendataanPendudukController {
         return pendataanPendudukService.save(pendataanPenduduk);
     }
 
-    @DeleteMapping("/delete/{nik}")
-    public void remove(@PathVariable("nik") String nik) {
-        pendataanPendudukService.delete(nik);
+    @DeleteMapping("/delete/{id}")
+    public void remove(@PathVariable("id") Long id) {
+        pendataanPendudukService.delete(id);
     }
 
     @PostMapping("/{search}/{nama}")
