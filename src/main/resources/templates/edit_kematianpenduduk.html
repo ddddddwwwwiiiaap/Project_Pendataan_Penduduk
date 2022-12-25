@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Pendataan Penduduk</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Pendataan Penduduk</h1>
+        <hr>
+        <h2>Update Data Penduduk</h2>
+        <br>
+        <form th:object="${edit_kematianpenduduk}" method="POST" th:action="@{/updatekematianpenduduk}">
+
+            <input type="hidden" th:field="*{id}" />
+
+            <div class="form-group">
+                <label for="umur">Penyebab</label>
+                <input type="text" id="penyebabkematian" class="form-control" placeholder="Masukkan Penyebab Kematian ..." th:field="*{penyebabkematian}">
+            </div>
+
+            <div class=" form-group ">
+                <label for="umur ">Tempat Meninggal</label>
+                <input type="text" id="tempatkematian " class="form-control " placeholder="Masukkan Tempat Meninggal ... " th:field="*{tempatkematian}">
+            </div>
+
+            <div class="form-group ">
+                <label for="umur ">Tanggal Meninggal</label>
+                <input type="date" id="tglkematian " class="form-control " placeholder="Masukkan Tempat Meninggal ... " th:field="*{tglkematian}">
+            </div>
+
+            <div class="form-group ">
+                <label for="umur ">Waktu Meninggal</label>
+                <input type="time" step="1" id="waktukematian " class="form-control " th:field="*{waktukematian}">
+            </div>
+
+            <button type="submit " class="btn btn-primary ">Submit</button>
+        </form>
+
+        <hr>
+
+        <a th:href="@{/tables_kematianpenduduk.html}"> Back to Kematian Penduduk Table</a>
+    </div>
+</body>
+
+</html>
