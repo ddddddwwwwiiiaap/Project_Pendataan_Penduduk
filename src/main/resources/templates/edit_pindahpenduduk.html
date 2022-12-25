@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Pendataan Penduduk</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Pendataan Penduduk</h1>
+        <hr>
+        <h2>Update Data Penduduk</h2>
+        <br>
+        <form th:object="${edit_pindahpenduduk}" method="POST" th:action="@{/updatepindahpenduduk}">
+
+            <input type="hidden" th:field="*{id}" />
+            <div class="form-group">
+                <label for="alamat">Nama Kepala Keluarga</label>
+                <input type="text" id="nama" class="form-control" placeholder="Masukkan Nama Kepala Keluarga ..." th:field="*{namakepalakeluarga}">
+            </div>
+            <div class="form-group">
+                <label for="alamat">Alamat Sekarang</label>
+                <input type="text" id="nama" class="form-control" placeholder="Masukkan Alamat Sekarang ..." th:field="*{alamatsekarang}">
+            </div>
+            <div class="form-group">
+                <label for="alamat">Jumlah Keluarga Pindah</label>
+                <input type="text" id="nama" class="form-control" placeholder="Masukkan Alamat Tujuan ..." th:field="*{jumlahkeluargapindah}">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <hr>
+
+        <a th:href="@{/tables_pindahpenduduk.html}"> Back to Pindah Penduduk Table</a>
+    </div>
+</body>
+
+</html>
