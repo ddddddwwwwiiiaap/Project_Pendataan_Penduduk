@@ -122,13 +122,13 @@ public class HomeController {
     @GetMapping("/edit_pindahpenduduk/{id}")
     public String editpindahpenduduk(@PathVariable("id") Long id, Model model){
         model.addAttribute("edit_pindahpenduduk", pindahPendudukService.findById(id));
-        return "edit_datapenduduk";
+        return "edit_pindahpenduduk";
     }
 
     @PostMapping("/updatepindahpenduduk")
     public String updatepindahpenduduk(PindahPenduduk pindahPenduduk, Model model){
         pindahPendudukService.updateData(pindahPenduduk);
-        return "tables_pendataanpenduduk";
+        return "redirect:/tables_pindahpenduduk.html";
     }
 
 
@@ -189,6 +189,6 @@ public class HomeController {
     @PostMapping("/updatekematianpenduduk")
     public String updatekematianpenduduk(KematianPenduduk kematianPenduduk, Model model){
         kematianPendudukService.updateData(kematianPenduduk);
-        return "tables_kematianpenduduk";
+        return "redirect:/tables_kematianpenduduk.html";
     }
 }
