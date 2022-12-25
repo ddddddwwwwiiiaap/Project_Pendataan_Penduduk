@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.example.data.penduduk.Data.Penduduk.dto.KematianData;
 import com.example.data.penduduk.Data.Penduduk.models.entities.KematianPenduduk;
 import com.example.data.penduduk.Data.Penduduk.models.entities.PendataanPenduduk;
+import com.example.data.penduduk.Data.Penduduk.models.entities.PindahPenduduk;
 import com.example.data.penduduk.Data.Penduduk.models.repos.KematianPendudukRepo;
 import com.example.data.penduduk.Data.Penduduk.models.repos.PendataanPendudukRepo;
 
@@ -41,10 +42,6 @@ public class KematianPendudukService {
         return kematianPendudukRepo.findAll();
     }
 
-    public void delete(Long id) {
-        kematianPendudukRepo.deleteById(id);
-    }
-
     // public PendataanPenduduk get(PendataanPenduduk pendataanPenduduk) {
     // return pendataanPenduduk;
     // }
@@ -66,5 +63,21 @@ public class KematianPendudukService {
 
     public PendataanPenduduk findByNik(String nik) {
         return pendataanPendudukRepo.findByNikContains(nik);
+    }
+
+    public void saveData(KematianPenduduk kematianPenduduk){
+        kematianPendudukRepo.save(kematianPenduduk);
+    }
+
+    public void delete(Long id) {
+        kematianPendudukRepo.deleteById(id);
+    }
+
+    public void updateData(KematianPenduduk kematianPenduduk){
+        kematianPendudukRepo.save(kematianPenduduk);
+    }
+
+    public Optional<KematianPenduduk> findById(Long id){
+        return kematianPendudukRepo.findById(id);
     }
 }
