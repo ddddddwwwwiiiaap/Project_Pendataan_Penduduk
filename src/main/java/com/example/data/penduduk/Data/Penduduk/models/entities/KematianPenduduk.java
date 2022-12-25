@@ -36,7 +36,7 @@ public class KematianPenduduk implements Serializable {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date tglkematian;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss aa")
     private Time waktukematian;
 
     private Long idNIKpendataanpenduduk;
