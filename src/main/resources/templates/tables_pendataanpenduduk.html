@@ -379,11 +379,13 @@
                                     <thead>
                                         <!--table penduduk-->
                                         <tr>
+                                            <th>No</th>
                                             <th>NIK</th>
                                             <th>Nomer Kartu Keluarga</th>
                                             <th>Nama</th>
                                             <th>Alamat</th>
                                             <th>Tempat Lahir</th>
+                                            <th>Tanggal Lahir</th>
                                             <th>Agama</th>
                                             <th>Pendidikan</th>
                                             <th>Pekerjaan</th>
@@ -395,41 +397,41 @@
                                             <th>Nama Ayah</th>
                                             <th>Nama Ibu</th>
                                             <th>Golongan Darah</th>
-                                            <th>Status</th>
                                             <th>Jenis Kelamin</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr th:each="d: ${tables_pendataanpenduduk}">
+                                            <td th:text="${d.id}"></td>
                                             <td th:text="${d.nik}"></td>
-                                            <td th:text="${d.noKK}"></td>
+                                            <td th:text="${d.nokk}"></td>
                                             <td th:text="${d.nama}"></td>
                                             <td th:text="${d.alamat}"></td>
-                                            <td th:text="${d.tempatLahir}"></td>
-                                            <td th:text="${d.tanggalLahir}"></td>
+                                            <td th:text="${d.tempatlahir}"></td>
+                                            <td th:text="${d.tanggallahir}"></td>
                                             <td th:text="${d.agama}"></td>
                                             <td th:text="${d.pendidikan}"></td>
                                             <td th:text="${d.pekerjaan}"></td>
-                                            <td th:text="${d.statusPernikahan}"></td>
-                                            <td th:text="${d.statusKeluarga}"></td>
+                                            <td th:text="${d.statuspernikahan}"></td>
+                                            <td th:text="${d.statuskeluarga}"></td>
                                             <td th:text="${d.kewarganegaraan}"></td>
-                                            <td th:text="${d.noPaspor}"></td>
-                                            <td th:text="${d.noKITAS}"></td>
-                                            <td th:text="${d.namaAyah}"></td>
-                                            <td th:text="${d.namaIbu}"></td>
-                                            <td th:text="${d.golonganDarah}"></td>
+                                            <td th:text="${d.nopaspor}"></td>
+                                            <td th:text="${d.nokitas}"></td>
+                                            <td th:text="${d.namaayah}"></td>
+                                            <td th:text="${d.namaibu}"></td>
+                                            <td th:text="${d.golongandarah}"></td>
                                             <td th:text="${d.jeniskelamin}"></td>
                                             <td>
                                                 <a href="#" class="btn btn-success btn-icon-split"
-                                                    th:href="@{'/edit_datapenduduk/'+${d.nik}}">
+                                                    th:href="@{'/edit_datapenduduk/'+${d.id}}">
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-trash"></i>
                                                     </span>
                                                     <span class="text">Edit</span>
                                                 </a>
                                                 <a href="#" class="btn btn-danger btn-icon-split"
-                                                    th:href="@{'delete/'+${d.nik}}">
+                                                    th:href="@{'delete/'+${d.id}}">
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-trash"></i>
                                                     </span>
