@@ -1,4 +1,4 @@
-package com.example.data.penduduk.Data.Penduduk.models.repos;
+/*package com.example.data.penduduk.Data.Penduduk.models.repos;
 
 import java.util.List;
 
@@ -10,3 +10,4 @@ public interface UserRepo extends CrudRepository<User, Long>{
     
     List<User> findByUsernameContains(String username);
 }
+*/
