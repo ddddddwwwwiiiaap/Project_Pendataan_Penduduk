@@ -7,32 +7,32 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.data.penduduk.Data.Penduduk.dto.UserRegistrationDto;
-import com.example.data.penduduk.Data.Penduduk.services.UsersService;
+import com.example.data.penduduk.Data.Penduduk.services.UserService;
 
 @Controller
 @RequestMapping("/registration")
 public class UserRegistrationController {
+
+    private UserService userService;
+
+    public UserRegistrationController(UserService userService) {
+        super();
+        this.userService = userService;
+    }
     
-    private UsersService usersService;
-
-	public UserRegistrationController(UsersService usersService) {
-		this.usersService = usersService;
-	}
-
-	@ModelAttribute("user")
+    @ModelAttribute("user")
     public UserRegistrationDto userRegistrationDto() {
         return new UserRegistrationDto();
     }
-	
-	@GetMapping
-	public String showRegistrationForm() {
-		return "registration";
-	}
-	
-	@PostMapping
-	public String registerUserAccount(@ModelAttribute("user") UserRegistrationDto registrationDto) {
-		usersService.save(registrationDto);
-		return "redirect:/registration?success";
-	}
-
+    
+    @GetMapping
+    public String showRegistrationForm() {
+        return "registration";
+    }
+    
+    @PostMapping
+    public String registerUserAccount(@ModelAttribute("user") UserRegistrationDto registrationDto) {
+        userService.save(registrationDto);
+        return "redirect:/registration?success";
+    }
 }

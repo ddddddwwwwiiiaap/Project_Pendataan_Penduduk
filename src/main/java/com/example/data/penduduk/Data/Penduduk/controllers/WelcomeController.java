@@ -8,7 +8,7 @@ public class WelcomeController {
     
     @GetMapping("/login")
     public String welcomeController(){
-        return "index";
+        return "login";
     }
 
     @GetMapping("/home")
