@@ -11,7 +11,7 @@ public class WelcomeController {
         return "login";
     }
 
-    @GetMapping("/home")
+    @GetMapping("")
     public String homeController(){
         return "index";
     }
